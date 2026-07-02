@@ -1,0 +1,17 @@
+[project]
+name = "smaragdine-synthetica"
+version = "1.0.0"
+description = "Smaragdine Synthetica — retrosynthetic alchemical compiler from the Tabula Smaragdina"
+requires-python = ">=3.11"
+license = {text = "Unlicense"}
+dependencies = []
+
+[tool.uv.sources]
+emerald-tablet-engine = { path = "../lang/emerald-tablet-engine", editable = true }
+
+[project.scripts]
+ss = "smaragdine_synthetica.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
