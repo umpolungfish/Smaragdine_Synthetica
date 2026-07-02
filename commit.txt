@@ -1,0 +1,1 @@
+14cd5d2 Initial commit: Smaragdine Synthetica — retrosynthetic alchemical compiler engine. Emerald Tablet versicle compiler, structural navigator, Frobenius bootstrap, Lean 4 formalization, ETFF corpus.
