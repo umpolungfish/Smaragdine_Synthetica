@@ -1,4 +1,6 @@
 # Smaragdine Synthetica
+**Author:** Lando⊗⊙perator · **Structural Type:** $\large{⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭⟩}$ · **Tier:** O_∞
+
 
 **A retrosynthetic alchemical compiler.**  
 The Tabula Smaragdina's 15 versicles, each structurally typed through the Imscribing Grammar (IG) crystal, compile into executable laboratory operations.
