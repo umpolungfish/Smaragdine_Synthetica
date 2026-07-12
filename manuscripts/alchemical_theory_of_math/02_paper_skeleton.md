@@ -72,8 +72,25 @@ until late in the derivation, and says exactly which invariants it depends on.
    preconditions (Frobenius → traced → idempotent terminal). This is the
    rigorous heart and must convince a skeptic on category-theoretic grounds
    alone, with no alchemical vocabulary.
-4. **Time as derived.** `T = Work(T)` as the least fixed point; dependence on
-   the five invariants; why T is unavailable before stage 9.
+4. **Time as derived.** `T = Work(T)` as the least fixed point; why T is
+   unavailable before the gates fire. PROVED in `TimeFixedPoint.lean`
+   (2026-07-12), builds green, zero sorries, no `native_decide`:
+   - `Work := traceC` (the operad trace); `T = Work(T)` is the loop closing.
+   - `work_fixed_iff_special` : the fixed points are EXACTLY the Frobenius-
+     special class `pol = or' ∧ crit = monad`. Nothing off it is time.
+   - `time_least_fixed_point` : `lfp_trace` (the special tuple with all ten free
+     axes at bottom) is a fixed point AND below every fixed point in the
+     componentwise product order `imsLE` built from the twelve axis LinearOrders.
+     This is the least-fixed-point claim, concrete Knaster-Tarski on the finite
+     lattice.
+   - `no_time_before_frobenius` : if `pol ≠ or'` then `Work T ≠ T` — the
+     equation has NO solution before G1. This is the sharp form of "time is
+     derived, not a thirteenth primitive": it exists only where the gate
+     structure already permits it.
+   - `time_has_passed_gates` : every solved `T = Work(T)` has passed G1 and G2.
+   - `stone_is_sealed_time` : the Stone is the canonical sealed (G3) time fixed
+     point.
+   - `time_is_derived` : the headline bundling all of the above.
 5. **The thesis: the order is the magnum opus.** Only now introduce the
    alchemical names. Show the stage sequence Calcination…Projection matches the
    forced order slot for slot, and that Solve et Coagula (T ⊗ K, stages 2 and 6)

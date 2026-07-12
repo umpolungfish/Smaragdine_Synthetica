@@ -1,9 +1,9 @@
-Mirror GateOrdering section 8 and mark stages 5-8 order-free in the skeleton
+Mirror TimeFixedPoint and mark Section 4 (time as derived) PROVED
 
-The last open structural question — whether the gate-free stages 5-8 float or
-hide a precedence — is now proved: they commute pairwise and are inert on
-every gate, while a gate stage (parity) provably couples. lean/GateOrdering
-mirrors the proof from the buildable tree; the skeleton records the theorem
-names (gate_free_commute, the inert lemmas, parity_stage_couples,
-gate_free_order_freedom) for Section 3 and trims the open list to citation and
-an optional tier-function refinement.
+T = Work(T) as the least fixed point of the operad trace is now a theorem.
+lean/TimeFixedPoint mirrors the proof from the buildable tree: Work is the
+trace, its fixed points are exactly the Frobenius-special class,
+time_least_fixed_point gives lfp_trace as the componentwise-least fixed point
+over the twelve axis LinearOrders, and no_time_before_frobenius proves the
+equation is unsolvable before G1 — time is derived, not primitive. The paper
+skeleton Section 4 now records the theorem names to cite.
