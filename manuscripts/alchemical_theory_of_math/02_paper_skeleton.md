@@ -126,16 +126,38 @@ fresh formalization, not merely a fresh lemma. Details:
   form (which is consistent with it, no contradiction). Likewise idempotent
   completion of a traced category presupposes the trace, giving 9 < 12.
 
-## Fresh formalization needed (proposed `GateOrdering.lean`)
+## Fresh formalization: DONE and building (2026-07-12)
 
-1. Define the four operad layers as a linearly ordered `inductive Layer`
-   (plain < frobenius < traced < terminal) with the primitive that unlocks each.
-2. `trace` operator over the existing `μ_C/δ_C` Frobenius pair.
-3. `theorem traced_needs_frobenius` : the trace is defined only where `μ∘δ = id`
-   holds (uses `mu_delta_C_id_on_special`), giving stage 4 < 9.
-4. `theorem terminal_needs_traced` : idempotent completion consumes the trace,
-   giving 9 < 12.
-5. Corollary `gate_order : 4 < 9 ∧ 9 < 12` as the headline.
+`Imscribing/GateOrdering.lean` (in `p4rakernel/p4ramill/`, mirrored to
+`Smaragdine_Synthetica/lean/`). Builds green against Mathlib v4.28.0, zero
+sorries, and no `native_decide`: every proof is kernel-checked. The four operad
+layers are a linearly ordered `inductive Layer` (plain < frobenius < traced <
+terminal). The trace `traceC` is built on the existing `μ_C/δ_C` polarization
+Frobenius pair. Theorems now available to cite in Section 3:
+
+- `trace_closes_iff_special` : the traced layer is EXACTLY the special class
+  `pol = or' ∧ crit = monad`. This is the hinge; it uses
+  `mu_delta_C_id_on_special`.
+- `traced_needs_frobenius` : `traceCloses a → a.pol = or'`. Stage 4 < 9 as a
+  theorem (you cannot close a loop you never split).
+- `terminal_le_traced`, `terminal_le_frobenius` : G3 presupposes G2 presupposes
+  G1 (the precedence chain).
+- `frobenius_strictly_below_traced`, `traced_strictly_below_terminal` : every
+  inclusion is PROPER, each witnessed by an explicit tuple (`w_frob`,
+  `w_traced`) inhabiting one layer but not the next. The tower does not collapse.
+- `g1_is_a_real_barrier` : re-exports `frobenius_not_synthesizable` — `or'` is
+  not reachable by tensoring lower parities, so stage 4 is a genuine gate.
+- `gate_order` : `4 < 9 ∧ 9 < 12` (the stage arithmetic).
+- `gate_ordering_theorem` : the headline conjunction bundling all of the above,
+  plus `w_stone` inhabiting the terminal layer.
+
+Resolution of earlier mismatch #2 (Protection irrelevant to O_inf): handled by
+defining `unlockTerminal` to require BOTH a protective winding (Ω ∈ {ah, zoo})
+AND the O_inf tier on top of a closing trace, rather than reading G3 off the
+bare tier function. G3 acts on the traced operad, exactly as the category theory
+says; the tier function's silence on Ω-within-O_inf is sidestepped, not relied
+on. If the paper later wants Ω to refine O_inf in `Core.lean` itself, that is a
+separate, additive change.
 
 ## Remaining open questions
 

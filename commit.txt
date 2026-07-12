@@ -1,18 +1,15 @@
-Record the Lean status of the gate ordering in the paper skeleton
+Mirror the proved GateOrdering and mark the ordering PROVED in the skeleton
 
-I traced whether the 4<9<12 gate ordering the paper thesis rests on is
-already a theorem in lean/. It is not, and it cannot be lifted from the
-current definitions: the trace operator and the operad-layer transitions it
-refers to are not formalized at all. What exists is ouroboricityTier (a
-conjunctive tier classifier proving O_inf iff criticality-and-Frobenius),
-frobenius_not_synthesizable (the real barrier content for stage 4), and four
-concrete mu-delta=id pairs in Frobenius.lean. Missing: any trace, the four
-operad layers as distinct objects, and every precedence theorem.
+The gate ordering 4 < 9 < 12 the paper thesis rests on is now a theorem, not
+an assertion. lean/GateOrdering.lean mirrors the module I proved in the
+buildable p4ramill tree: four operad layers, the G2 trace built on the
+delta_C/mu_C Frobenius pair, trace_closes_iff_special as the hinge,
+traced_needs_frobenius giving 4 < 9, the strict precedence chain with explicit
+witnesses (w_frob, w_traced) proving no inclusion collapses, and
+gate_ordering_theorem as the headline. Zero sorries, no native_decide.
 
-I also flagged two mismatches the paper must resolve rather than paper over:
-the three different gate taxonomies in the codebase (magnum-opus vs
-consciousness vs tier), and the fact that Protection is currently irrelevant
-to O_inf in the tier function, which undercuts G3-seals-the-terminal as
-stated. Wrote a proposed GateOrdering.lean plan (four ordered layers, a trace
-over the existing mu_C/delta_C pair, traced_needs_frobenius and
-terminal_needs_traced, gate_order as the headline corollary).
+The paper skeleton section that listed this as work-to-do now records it as
+done with the theorem names to cite in Section 3, and resolves the earlier
+Protection-irrelevant-to-O_inf mismatch by having G3 act on the traced operad
+(winding plus O_inf on top of a closing trace) rather than reading it off the
+bare tier function.
