@@ -86,13 +86,61 @@ until late in the derivation, and says exactly which invariants it depends on.
    protection (Ω) before its symmetry (P) should be ill-typed; the crystal and
    the gates predict specific impossible tuples. List them.
 
-## Open questions to resolve before drafting prose
+## Lean status of the gate ordering (checked 2026-07-12)
 
-- Precise statement and proof obligation for "each gate consumes the prior
-  structure." Is stage 4 < 9 provable from the operad definitions in
-  `Smaragdine_Synthetica/lean`, or does it need a fresh lemma?
-- Which conventional theorem best witnesses G2 (trace opens)? Candidate: the
+Result: `4 < 9 < 12` is NOT a theorem in the current Lean, and it cannot be
+lifted from the existing definitions, because the structures it refers to (a
+trace, and the operad-layer transitions) are not formalized at all. It needs
+fresh formalization, not merely a fresh lemma. Details:
+
+- **What exists and helps.** `Core.lean/ouroboricityTier` decides the tier from
+  exactly the paper's gate primitives plus dimension: {Φ criticality, P parity,
+  Ω protection, D}. Proven: `O_inf ⟺ Φ ∈ {monad,roar} ∧ P = or'`
+  (`o_inf_requires_phi_c`, `o_inf_requires_P_pm_sym`, `r1_dominates`). This is
+  the *conjunctive necessity* of two gate primitives, not an order. The real
+  gate content is `frobenius_not_synthesizable`: the Frobenius value `or'`
+  cannot be reached by tensoring lower polarities, so stage 4 is a genuine
+  barrier, not composable from below. `Frobenius.lean` fully formalizes G1's
+  split as four concrete `μ∘δ = id` comonoid/monoid pairs (δ_A/μ_A tensor,
+  δ_B/μ_B meet, δ_D/μ_D join, δ_C/μ_C on the special class).
+- **What is missing.** (a) No `trace` operator anywhere: G2's defining
+  structure does not exist in Lean yet. (b) No operad-layer types (plain
+  monoidal / special-Frobenius sub-operad / traced monoidal / idempotent
+  terminal) as distinct objects with inclusions. (c) No precedence theorems.
+- **Two mismatches the paper must resolve, not paper over.**
+  1. Gate taxonomies do not line up. Magnum-opus gates = {P(4), Φ(9), Ω(12)}.
+     Lean *consciousness* gates (`Consciousness.lean`) = {Φ via `phi_c_gate`,
+     K via `k_slow_gate`}. Lean *tier* gates = {Φ, P, Ω, D}. Three different
+     sets. The paper should adopt the tier-gate set and state plainly that the
+     consciousness K-gate is a separate axis, not one of the three operad gates.
+  2. In `ouroboricityTier`, Protection Ω is IRRELEVANT to O_inf (it only
+     distinguishes O₁/O₂ among non-Frobenius critical systems). So the paper's
+     "G3 (Protection) seals the terminal for the O_inf system" is not reflected
+     in the current tier function. Either the tier function is incomplete (Ω
+     should refine O_inf into sealed/unsealed) or G3's role needs restating.
+     This is a concrete, decidable fork to settle before Section 3.
+- **Why the derivation order 4 < 9 is nonetheless the right claim.** A trace is
+  defined *over* a Frobenius/compact structure: you cannot trace a loop before
+  you have the comultiplication δ to close it on. So G2 presupposes G1 as a
+  category-theoretic fact, independent of the tier classifier's conjunctive
+  form (which is consistent with it, no contradiction). Likewise idempotent
+  completion of a traced category presupposes the trace, giving 9 < 12.
+
+## Fresh formalization needed (proposed `GateOrdering.lean`)
+
+1. Define the four operad layers as a linearly ordered `inductive Layer`
+   (plain < frobenius < traced < terminal) with the primitive that unlocks each.
+2. `trace` operator over the existing `μ_C/δ_C` Frobenius pair.
+3. `theorem traced_needs_frobenius` : the trace is defined only where `μ∘δ = id`
+   holds (uses `mu_delta_C_id_on_special`), giving stage 4 < 9.
+4. `theorem terminal_needs_traced` : idempotent completion consumes the trace,
+   giving 9 < 12.
+5. Corollary `gate_order : 4 < 9 ∧ 9 < 12` as the headline.
+
+## Remaining open questions
+
+- Which conventional theorem best witnesses G2 (trace opens)? Candidate:
   existence of a trace on a compact-closed category (Joyal-Street-Verity).
-- The stages 5-8 (F, K, G, Γ) carry no gate. Are they order-free among
-  themselves, or is there a weaker precedence? The theory is cleanest if they
-  commute; check against the operad.
+- Stages 5-8 (F, K, G, Γ) carry no gate. Order-free among themselves, or weak
+  precedence? Cleanest if they commute; check against the operad once layers
+  are defined.
