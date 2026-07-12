@@ -1,1 +1,24 @@
-14cd5d2 Initial commit: Smaragdine Synthetica — retrosynthetic alchemical compiler engine. Emerald Tablet versicle compiler, structural navigator, Frobenius bootstrap, Lean 4 formalization, ETFF corpus.
+Start the Alchemical Theory of Mathematics paper: Phase 1 decomposition + skeleton
+
+New manuscript under manuscripts/alchemical_theory_of_math/.
+
+Phase 1 (01_conventional_decomposition.md) stands alone: I pushed every
+per-primitive CL8NK fragment down into two layers, a first-order / ZFC
+unfolding and the named conventional structure it denotes, grouped under the
+twelve Core.lean axes. No alchemical claim in it. Along the way I had to
+reconcile the two axis dialects: the navigator's glyph labels (Ð Þ Ř Φ ƒ Ç Γ
+ɢ ⊙ Ħ Σ Ω) and Core.lean's named axes (D T R P F K G Γ Φ H S Ω) are the same
+twelve in the same tuple positions, and the mapping is fixed by fragment
+content and confirmed by matching family cardinality position for position.
+The glyphs Γ, Φ, Ω occur in both dialects but at different axes, so I wrote the
+reconciliation table into the doc so nothing downstream conflates them.
+
+Phase 2 (02_paper_skeleton.md) is the skeleton for the thesis: the twelve
+invariants a mathematician already computes carry a forced derivation order,
+that order is set by three categorical gates at stages 4, 9, 12 (special
+Frobenius mu-delta=id, then a trace opening, then an idempotent terminal), and
+the forced order is exactly the twelve-stage magnum opus. Register is
+rigorous-first: the category theory has to convince a skeptic with no
+alchemical vocabulary before the alchemical names appear. Time enters as a
+derived object, T=Work(T), unavailable before the trace opens at stage 9.
+Section plan and the open proof obligations are listed at the end.
