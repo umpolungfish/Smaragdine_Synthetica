@@ -1,15 +1,9 @@
-Mirror the proved GateOrdering and mark the ordering PROVED in the skeleton
+Mirror GateOrdering section 8 and mark stages 5-8 order-free in the skeleton
 
-The gate ordering 4 < 9 < 12 the paper thesis rests on is now a theorem, not
-an assertion. lean/GateOrdering.lean mirrors the module I proved in the
-buildable p4ramill tree: four operad layers, the G2 trace built on the
-delta_C/mu_C Frobenius pair, trace_closes_iff_special as the hinge,
-traced_needs_frobenius giving 4 < 9, the strict precedence chain with explicit
-witnesses (w_frob, w_traced) proving no inclusion collapses, and
-gate_ordering_theorem as the headline. Zero sorries, no native_decide.
-
-The paper skeleton section that listed this as work-to-do now records it as
-done with the theorem names to cite in Section 3, and resolves the earlier
-Protection-irrelevant-to-O_inf mismatch by having G3 act on the traced operad
-(winding plus O_inf on top of a closing trace) rather than reading it off the
-bare tier function.
+The last open structural question — whether the gate-free stages 5-8 float or
+hide a precedence — is now proved: they commute pairwise and are inert on
+every gate, while a gate stage (parity) provably couples. lean/GateOrdering
+mirrors the proof from the buildable tree; the skeleton records the theorem
+names (gate_free_commute, the inert lemmas, parity_stage_couples,
+gate_free_order_freedom) for Section 3 and trims the open list to citation and
+an optional tier-function refinement.

@@ -159,10 +159,32 @@ says; the tier function's silence on Ω-within-O_inf is sidestepped, not relied
 on. If the paper later wants Ω to refine O_inf in `Core.lean` itself, that is a
 separate, additive change.
 
+## Stages 5-8 are order-free: PROVED (2026-07-12)
+
+Settled in `GateOrdering.lean` §8. The four gate-free stages are single-axis
+projections toward the Stone on axes no unlock predicate reads (F, K, G, Γ).
+Two theorems make "order-free" precise and separate them from the gates:
+
+- `gate_free_commute` : the four projections pairwise commute (all six orders
+  agree). Updates on disjoint axes.
+- `stageFid_inert_traced`, `stageKin_inert_traced`, `stageGran_inert_traced`,
+  `stageGram_inert_traced` (+ `gate_free_inert_frobenius`) : each gate-free
+  stage is INERT on the gates. It neither opens nor closes a gate, so it can be
+  interleaved anywhere in the sequence.
+- `parity_stage_couples` : the CONTRAST. A gate stage (parity, G1) is not inert
+  — setting the parity axis can flip `unlockTraced` from false to true
+  (witness `{w_stone with pol := nun}`). That coupling is precisely why the
+  gates are ordered while 5-8 float.
+- `gate_free_order_freedom` : bundles commutation, inertness, and the coupling
+  contrast.
+
+So the theory's cleanest form holds: 5-8 commute and float; 4, 9, 12 are forced.
+
 ## Remaining open questions
 
 - Which conventional theorem best witnesses G2 (trace opens)? Candidate:
-  existence of a trace on a compact-closed category (Joyal-Street-Verity).
-- Stages 5-8 (F, K, G, Γ) carry no gate. Order-free among themselves, or weak
-  precedence? Cleanest if they commute; check against the operad once layers
-  are defined.
+  existence of a trace on a compact-closed category (Joyal-Street-Verity). This
+  is a naming/citation task for Section 3 prose, not a proof obligation.
+- Should Ω refine O_inf inside `Core.lean` (sealed/unsealed), making the tier
+  function itself carry G3? Currently G3 lives in `unlockTerminal`. Additive,
+  optional; only needed if the paper wants the tier classifier to be complete.
