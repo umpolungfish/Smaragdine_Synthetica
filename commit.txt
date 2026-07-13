@@ -1,15 +1,27 @@
-Mirror LiarIdempotent.lean and add the grounding note
+Solve et coagula: fuse ALKAHEST and the theory of math into REBIS.md
 
-The sealed-system synthesis named its central claim outright: the Liar is the
-idempotent point. That was a theorem waiting to be written, so I wrote it.
-lean/LiarIdempotent.lean mirrors the p4rakernel module: e = delta after mu is
-idempotent unconditionally, every fusion output is a time fixed point, the
-round trip verifies on e's image, and the fusion genuinely forgets (mu_C is
-non-injective in parity) while the return is lossless.
+The two manuscripts each held one hand of the same operator. ALKAHEST is the
+solvent, verification as imscription in the d=12 SIC frame; the alchemical
+theory of mathematics is the stone, the kernel-checked forced derivation order
+of structural type. Both stand on mu after delta = id, and that equation is
+simultaneously the solvent's lossless-return test and the stone's first gate,
+so the conjunction happens exactly where the tradition places the wedding, at
+stage 4 on the parity axis.
 
-04_liar_and_idempotent.md records the one correction worth holding: the
-forgetfulness lives in e = delta after mu, not in the lossless return
-mu after delta. Both are true at once of the same pair. The note separates
-theorem from gloss explicitly. The idempotent, the fixed point, and the
-forgetting are proved; the Liar-as-Belnap-B, the braiding of the two loops,
-and the amnesia of origin are the readings the theorems support.
+manuscripts/rebis/REBIS.md dissolves both to their load-bearing structure and
+coagulates one argument. New joints, each marked as theorem, checked witness,
+or reading: the two strict-inclusion theorems are Jabir's balance-is-not-the-
+work made formal; the type-as-verdict format is meaningful because the tuple
+has proved coordinates to diverge at; the two composites (lossless return vs
+forgetful idempotent, LiarIdempotent.lean) are the formal content of the
+same-in-type-different-in-form closure demand; verification is available
+exactly where time is (the special class); and the falsifiable one, Zosimos's
+six-command Stilling Practice promotes D, Th, Phi, C, crit, Omega in an order
+that satisfies G1 before G2 before G3 with the float interleaved where the
+order-freedom theorem permits. A 3rd-century protocol satisfies a 21st-century
+ordering theorem, command for command.
+
+The document is self-describing: it was produced by the operation it names,
+two works dissolved and fused with the closure check being that nothing
+load-bearing was lost. The rebis keeps two heads on one body; collapsing
+verification into construction outright would contradict fusion_forgets.
