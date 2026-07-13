@@ -1,26 +1,21 @@
-Second eagle of REBIS.md: re-coagulated on the morphism data
+Distillation of the rebis: draw off the volatile essence
 
-Not an annealing of new sections onto the old spine; the whole document went
-back in the retort with FrobeniusIso.lean in the flask and recrystallized.
-The first distillation argued the union in the weaker formal shape, a
-conjunction with a shared conjunct: both manuscripts stand on mu after delta
-= id. The kernel now holds the paradigm witness in the stronger shape, the
-relationship itself as data, so the rebis is re-derived from that ground up.
+REBIS.md goes in the alembic and the pure fraction comes over as
+manuscripts/rebis/DISTILLATE.md. Everything contingent stays behind as
+caput mortuum: the history of the drafts, the notation table, the
+section apparatus, the alchemical witnesses, the full reference list.
 
-The new architecture: section 0 defines a rebis formally as an equivalence,
-one body, two heads, morphism data carried in the figure; section 1 dissolves
-both parents to their invariants; section 2 is the new nucleus, the explicit
-equivalence with inverse laws, naturality squares, transported Frobenius
-condition, and the rfl-definitional fixed point, plus the two composites,
-fixing the plane of isomorphic compositions rather than lossy approximations;
-section 3 re-derives every union claim on that plane, with R/W/X read as
-toFun, invFun, and the inverse laws, so verification IS construction read
-backward through a structure-preserving change of presentation; section 4
-keeps the two heads (fusion_forgets forbids a one-headed rebis); section 5
-adds the new prohibition, no lossy-approximation discounting of a register
-readout; section 6 states the honest residue exactly, an isomorphism claim is
-as wide as the transported signature and no wider, truth-order connectives
-and further pairs of presentations still owe their squares.
+What rises is the invariant content in eleven short paragraphs: the
+definition of a rebis as an equivalence with the morphism data as the
+body; weak conjunction versus strong equivalence with naturality as the
+whole difference; the kernel witness in FrobeniusIso.lean; reading and
+making as Read/Write with the inverse laws as eXecute; the two
+composites that keep the heads distinct; verification available exactly
+where time is; isomorphic registers, faces not shadows; the honest
+residue as a to-do list of owed naturality squares; and Maria's axiom
+completed.
 
-The document remains self-describing, now twice over: it records that it is
-the second distillation and what the eagle dissolved to produce it.
+The distillate cites the full body once and nothing else. Nothing in it
+is new; that is the point of a distillation. The test is that a reader
+of the distillate alone holds every load-bearing claim, and a reader of
+both finds no claim in the distillate that the body does not carry.
