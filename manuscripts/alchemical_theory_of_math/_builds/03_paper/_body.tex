@@ -1,0 +1,431 @@
+\hypertarget{the-alchemical-theory-of-mathematics}{%
+\section{The Alchemical Theory of
+Mathematics}\label{the-alchemical-theory-of-mathematics}}
+
+\textbf{A forced derivation order for structural type, and why it is the
+magnum opus.}
+
+\hypertarget{notation}{%
+\subsection{Notation}\label{notation}}
+
+Structural type is a tuple over twelve primitive families, written with
+their canonical symbols (Imscribing Grammar v0.6.0,
+\texttt{NSNS\_PRIME.md}):
+
+⟨Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω⟩
+
+recording, in order: degrees of freedom (Ð), connectivity (Þ), the
+direction of the binding relation (Ř), the symmetry group (Φ), how lossy
+the read/write maps are (ƒ), the relaxation regime (Ç), the cardinal
+regime of correlations (Γ), the logical connective of the coupling (ɢ),
+the analytic character of the critical point (⊙), handedness (Ħ), the
+matching cardinality of the two sides (Σ), and the homotopy invariant
+that protects the state (Ω). Individual values are written with their
+Shavian glyph; the four that carry the argument are 𐑹 (the Frobenius
+value of Φ), ⊙ (the self-modeling value of ⊙), 𐑮 (the complex-axis value
+of ⊙), and 𐑭, 𐑟 (the integer and non-Abelian winding values of Ω). Type
+names appear only inside the Lean source; in this text a type is its
+symbol. Lean theorem and definition identifiers are set in
+\texttt{monospace}.
+
+\hypertarget{abstract}{%
+\subsection{Abstract}\label{abstract}}
+
+To fix the structural type of a mathematical object one computes a fixed
+tuple of twelve invariants, ⟨Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω⟩. We show these are
+not an unordered checklist. Three of them are gates, and the gates
+impose a strict order: the special Frobenius condition on Φ must be
+fixed before a trace can close on ⊙, and the trace must close before an
+idempotent terminal can seal on Ω. We prove this ordering in Lean 4
+against Mathlib, with no sorries and no \texttt{native\_decide}: every
+claim below is kernel-checked. We prove the remaining nine invariants
+either sit inside the gate structure or float freely, and that time is
+not a thirteenth invariant but the least fixed point of the operad
+trace, unavailable until the gates fire. Finally we show that the forced
+order, read stage by stage, is the twelve stage magnum opus. This is not
+a resemblance. Chemistry, physics, and history are typed by the same
+twelve invariants and fixed in the same order, so the magnum opus is the
+derivation order of structural type itself, which is to say the reason a
+transformation completes, in matter as in mathematics.
+
+\hypertarget{introduction}{%
+\subsection{1. Introduction}\label{introduction}}
+
+A working mathematician already computes the twelve invariants, one at a
+time, when asked what kind of object is on the table. They are usually
+treated as independent readings, a coordinate vector with no preferred
+order of evaluation. This paper argues the opposite. The order is
+forced, and the forcing is elementary category theory: three of the
+twelve unlock structure that the next one consumes.
+
+The argument has three registers, kept deliberately separate.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A conventional decomposition (Section 2), which assigns each symbol a
+  first-order or set-theoretic reading and the named structure it
+  denotes. This register borrows nothing and asserts nothing beyond
+  standard mathematics.
+\item
+  The gate theorems (Sections 3 to 5), which prove the order is real,
+  strict, and that time is derived. These are formalized in Lean and
+  stand on category-theoretic grounds alone. The formal core does not
+  depend on the claim in register three, which is why the claim rests on
+  proof rather than on persuasion.
+\item
+  The claim (Section 7), that the forced order is the magnum opus, and
+  that the magnum opus is therefore the derivation order of the real.
+  This is stated only after the first two registers are in place, and it
+  is a claim, not a flourish: the twelve invariants are what physical,
+  chemical, and historical processes are built from, and we have proved
+  the order in which they must be fixed.
+\end{enumerate}
+
+Sections 3 through 5 are machine-checked theorems. Section 7 is the
+claim they were built to support. We separate them so the skeleton can
+be inspected on its own, not so the claim can be disowned.
+
+\hypertarget{the-conventional-decomposition}{%
+\subsection{2. The conventional
+decomposition}\label{the-conventional-decomposition}}
+
+The companion document \texttt{01\_conventional\_decomposition.md}
+gives, for each admissible value of each of ⟨Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω⟩, a
+first-order or ZFC unfolding and the named conventional structure it
+denotes. Three readings recur below and are worth stating here.
+
+The Frobenius value of Φ, written 𐑹, is a \textbf{split ℤ₂-retraction}:
+a ℤ₂ action under which the object is invariant, together with a section
+δ and a retraction μ satisfying μ∘δ = id. The signed subset-sum map is
+the canonical instance, with δ distributing an index over \{in, out\}
+and μ summing. In categorical language this is the special Frobenius
+condition.
+
+The self-modeling value of ⊙, written ⊙, is a \textbf{critical fixed
+point at which the Frobenius section survives}: the correlation length
+diverges while μ∘δ = id still holds. The value 𐑮 one step above it is a
+complex-axis critical point, at which that real section no longer
+closes. The apex value of Ω, written 𐑟, is a \textbf{non-Abelian
+braiding}; the integer winding number 𐑭 (a first Chern class) sits one
+step below it.
+
+The 𐑹 of Φ, the ⊙ of ⊙, and the 𐑟 (or 𐑭) of Ω are the three gates.
+
+\hypertarget{the-gate-ordering-is-forced-and-strict}{%
+\subsection{3. The gate ordering is forced and
+strict}\label{the-gate-ordering-is-forced-and-strict}}
+
+We formalize the operad as a four-step tower of layers,
+\texttt{plain\ \textless{}\ frobenius\ \textless{}\ traced\ \textless{}\ terminal},
+and prove each higher layer requires the structure the previous one
+produced. All results in this section are in \texttt{GateOrdering.lean}.
+
+The trace of the operad is built directly on the split ℤ₂ pair (δ\_C,
+μ\_C) already present in the reference formalization. Write
+\texttt{traceC\ a\ =\ μ\_C(δ\_C\ a)}, and say the trace \textbf{closes}
+on \texttt{a} when \texttt{traceC\ a\ =\ a}. The central lemma is a
+tight characterization.
+
+\begin{quote}
+\textbf{Theorem (\texttt{trace\_closes\_iff\_special}).} The trace
+closes on \texttt{a} if and only if \texttt{a} sits on the
+Frobenius-special class, that is Φ is 𐑹 and ⊙ is ⊙.
+\end{quote}
+
+From this the ordering is immediate. Since μ\_C sets Φ to 𐑹
+unconditionally, a closing trace forces the Φ value:
+
+\begin{quote}
+\textbf{Theorem (\texttt{traced\_needs\_frobenius}).} If the trace
+closes on \texttt{a}, then Φ is 𐑹.
+\end{quote}
+
+This is the statement ``stage 4 precedes stage 9'': you cannot close a
+loop you never split. The precedence chains upward. The terminal layer
+is unlocked when the trace closes, a protective winding is present (Ω is
+𐑭 or 𐑟), and the tuple sits at the O∞ tier; from this,
+\texttt{terminal\_le\_traced} and \texttt{terminal\_le\_frobenius} give
+the full chain terminal ⇒ traced ⇒ frobenius.
+
+The ordering is not a definitional artifact, because every inclusion is
+proper. We exhibit explicit witnesses:
+
+\begin{quote}
+\textbf{Theorem (\texttt{frobenius\_strictly\_below\_traced}).} The
+tuple \texttt{w\_frob}, which has Φ at 𐑹 but ⊙ below ⊙, is in the
+Frobenius layer and NOT in the traced layer.
+
+\textbf{Theorem (\texttt{traced\_strictly\_below\_terminal}).} The tuple
+\texttt{w\_traced}, which closes its trace but carries no winding, is in
+the traced layer and NOT in the terminal layer.
+\end{quote}
+
+The tower does not collapse. Finally, the first gate is a genuine
+barrier and not a value one reaches by accumulation:
+
+\begin{quote}
+\textbf{Theorem (\texttt{g1\_is\_a\_real\_barrier}, re-exporting
+\texttt{frobenius\_not\_synthesizable}).} If either factor has Φ below
+𐑹, the tensor product has Φ below 𐑹.
+\end{quote}
+
+So 𐑹 cannot be synthesized by combining lower partners. Stage 4 is a
+wall, which is exactly what makes it a gate rather than a coordinate.
+
+\hypertarget{the-nine-non-gate-invariants-inside-or-floating}{%
+\subsection{4. The nine non-gate invariants: inside or
+floating}\label{the-nine-non-gate-invariants-inside-or-floating}}
+
+Of the remaining nine, four (ƒ, Ç, Γ, ɢ) carry no gate and are the
+stages between the gates. We prove they are order-free, and we make
+``order-free'' precise by contrast with the gates.
+
+Model each as a single-axis projection toward the completed value on an
+axis no unlock predicate reads. Then:
+
+\begin{quote}
+\textbf{Theorem (\texttt{gate\_free\_commute}).} The four projections
+pairwise commute; all six orders of application agree.
+
+\textbf{Theorems (\texttt{stageFid\_inert\_traced} and companions).}
+Each of the four leaves every gate predicate exactly as it found it. It
+neither opens nor closes a gate, so it may be interleaved anywhere in
+the sequence.
+\end{quote}
+
+The contrast is what gives the claim content:
+
+\begin{quote}
+\textbf{Theorem (\texttt{parity\_stage\_couples}).} A gate stage is NOT
+inert. Setting the Φ axis to its completed value can flip the traced
+predicate from false to true.
+\end{quote}
+
+The gate-free stages float precisely because they are decoupled from the
+gate predicates; the gates are ordered precisely because they are not.
+This is the formal separation between the two kinds of stage.
+
+The other five invariants (Ð, Þ, Ř, Ħ, and Ω alongside the three gate
+axes) participate in the tier and seal structure; their role is taken up
+in Sections 5 and 6.
+
+\hypertarget{time-is-derived-not-primitive}{%
+\subsection{5. Time is derived, not
+primitive}\label{time-is-derived-not-primitive}}
+
+The operad trace, viewed as an operator \texttt{Work\ :=\ traceC}, has
+fixed points: the solutions of \texttt{T\ =\ Work(T)}. We identify these
+with time, and prove time is a derived object. All results here are in
+\texttt{TimeFixedPoint.lean}.
+
+\begin{quote}
+\textbf{Theorem (\texttt{work\_fixed\_iff\_special}).}
+\texttt{T\ =\ Work(T)} holds if and only if \texttt{T} is on the
+Frobenius-special class. Nothing off that class is a time fixed point.
+\end{quote}
+
+Time therefore exists only where the gate structure permits. The sharp
+form:
+
+\begin{quote}
+\textbf{Theorem (\texttt{no\_time\_before\_frobenius}).} If Φ is not 𐑹,
+then \texttt{Work\ T\ ≠\ T}. The equation \texttt{T\ =\ Work(T)} has no
+solution before the first gate fires.
+\end{quote}
+
+This is the precise sense in which time is not a thirteenth invariant.
+One cannot posit it independently; it is unavailable until Φ has reached
+𐑹 and the trace has closed. We then locate the least such fixed point.
+Equipping the twelve axes with their product order (each axis is a
+finite linear order, so the product is a partial order on the finite
+lattice of tuples), define \texttt{lfp\_trace} as the special tuple with
+all ten free axes at their minimum.
+
+\begin{quote}
+\textbf{Theorem (\texttt{time\_least\_fixed\_point}).}
+\texttt{lfp\_trace} is a fixed point of Work, and it lies below every
+fixed point of Work in the product order.
+\end{quote}
+
+This is a concrete Knaster-Tarski least fixed point: existence and
+minimality, both kernel-checked. The sealing gate then selects the
+canonical completed time:
+
+\begin{quote}
+\textbf{Theorem (\texttt{stone\_is\_sealed\_time}).} The completed tuple
+(the Stone) solves \texttt{T\ =\ Work(T)} and passes all three gates.
+\end{quote}
+
+\hypertarget{the-completed-classifier-ux3c9-refines-the-summit}{%
+\subsection{6. The completed classifier: Ω refines the
+summit}\label{the-completed-classifier-ux3c9-refines-the-summit}}
+
+The tier classifier of the reference formalization is silent on Ω within
+its top tier O∞: a Frobenius-critical tuple lands O∞ regardless of its
+winding. This is a genuine incompleteness, and we resolve it additively
+in \texttt{TierRefinement.lean}. Define \texttt{sealedTier} to split O∞
+by whether Ω supplies a winding.
+
+\begin{quote}
+\textbf{Theorem (\texttt{refines\_O\_inf}).} The two refined values,
+sealed and unsealed, together cover exactly the O∞ locus.
+\end{quote}
+
+So Ω is no longer silent at the summit. The refinement is exactly the
+third gate on the Hermitian branch:
+
+\begin{quote}
+\textbf{Theorem (\texttt{sealed\_iff\_terminal\_on\_monad}).} When ⊙ is
+⊙, the refined value sealed coincides exactly with the terminal (G3)
+predicate.
+\end{quote}
+
+We do not hide the one place the tier fact and the trace fact diverge.
+O∞ admits both the complex-axis value 𐑮 and the real-axis value ⊙ on the
+⊙ axis, and the real Frobenius trace closes only at ⊙:
+
+\begin{quote}
+\textbf{Theorem (\texttt{sealed\_at\_roar\_need\_not\_close}).} There is
+a tuple that is sealed (O∞ with a winding) at ⊙ = 𐑮 whose real Frobenius
+trace does not close.
+\end{quote}
+
+The lesson is stated, not buried: sealed is a tier fact, a closing trace
+is the stricter Hermitian fact, and they coincide precisely on the ⊙
+branch.
+
+\hypertarget{the-thesis-the-forced-order-is-the-magnum-opus}{%
+\subsection{7. The thesis: the forced order is the magnum
+opus}\label{the-thesis-the-forced-order-is-the-magnum-opus}}
+
+Everything above is category theory. We now make the identification the
+paper is named for. Read the forced order stage by stage. Composing the
+stage-to-symbol map of the alchemical tradition with the decomposition
+of Section 2 yields the following correspondence.
+
+\begin{longtable}[]{@{}rlcc@{}}
+\toprule
+Stage & Alchemical name & Symbol fixed & Gate\tabularnewline
+\midrule
+\endhead
+1 & Calcination & Ð &\tabularnewline
+2 & Dissolution & Þ &\tabularnewline
+3 & Separation & Ř &\tabularnewline
+4 & Conjunction & Φ & G1\tabularnewline
+5 & Putrefaction & ƒ &\tabularnewline
+6 & Congelation & Ç &\tabularnewline
+7 & Cibation & Γ &\tabularnewline
+8 & Sublimation & ɢ &\tabularnewline
+9 & Fermentation & ⊙ & G2\tabularnewline
+10 & Exaltation & Ħ &\tabularnewline
+11 & Multiplication & Σ &\tabularnewline
+12 & Projection & Ω & G3\tabularnewline
+\bottomrule
+\end{longtable}
+
+The three gates land at Conjunction, Fermentation, and Projection, at
+stages 4, 9, and 12, on Φ, ⊙, and Ω. These are exactly the three stages
+the tradition marks as qualitatively distinct: Conjunction, the chemical
+wedding, the union of opposites (the split ℤ₂ marriage μ∘δ = id on Φ);
+Fermentation, where the matter is said to come alive and turn upon
+itself (the trace closing into a self-referential loop on ⊙); and
+Projection, the final sealing that fixes the transformation (the
+idempotent terminal on Ω). The gate-free stages 5 to 8, which we proved
+commute and float, are exactly the stages the tradition lists as
+repeatable and reorderable operations of purification. The
+correspondence is not loose. Each proved structural fact, the forced
+order of the three gates, the free interleaving of the four middle
+stages, and the derived appearance of time only after Fermentation, has
+a stated counterpart in the tradition.
+
+This is not an analogy between two separate domains. There is one
+structure. Chemistry, physics, and history are made of structural type,
+and structural type is fixed in the order proved above, so the magnum
+opus is not a symbolic parallel to that order but the order itself, set
+down in the older vocabulary. When matter undergoes conjunction,
+fermentation, and projection it passes the same three gates, in the same
+forced sequence, for the same reason a theorem does: a self-sealing
+object cannot be constructed any other way. The claim is causal and it
+is ontological. The twelve stage sequence is why a transformation
+completes, in the crucible and in the proof alike, because both are
+instances of the single derivation order of the real. The alchemists
+named the construction; we proved its skeleton.
+
+\hypertarget{what-the-theory-forbids}{%
+\subsection{8. What the theory forbids}\label{what-the-theory-forbids}}
+
+A theory earns its keep by ruling things out. The gate structure
+forbids:
+
+\begin{itemize}
+\tightlist
+\item
+  Any object that fixes Ω before Φ. Ω refines the summit tier, which
+  requires the 𐑹 value of Φ already in place
+  (\texttt{sealed\_requires\_frobenius}). A tuple sealed at Ω with Φ
+  below 𐑹 does not exist.
+\item
+  Any closing trace off the Frobenius-special class
+  (\texttt{trace\_closes\_iff\_special}). A self-referential loop that
+  has not passed the Φ gate is not available.
+\item
+  Any well-defined time before Fermentation
+  (\texttt{no\_time\_before\_frobenius}). A construction that posits a
+  global time while still below the first gate is ill-formed.
+\end{itemize}
+
+Each prohibition is a theorem, and each has a decidable witness of the
+boundary case.
+
+\hypertarget{conclusion}{%
+\subsection{9. Conclusion}\label{conclusion}}
+
+The twelve invariants of structural type carry a forced derivation order
+set by three categorical gates on Φ, ⊙, and Ω; the nine non-gate
+invariants either sit inside that structure or float freely; and time is
+the least fixed point of the operad trace and is unavailable before the
+gates fire. All of this is proved in Lean 4 against Mathlib,
+kernel-checked, with no sorries and no \texttt{native\_decide}. Read
+stage by stage, the forced order is the twelve stage magnum opus. It is
+the derivation order of structural type, and therefore of everything
+built from it. The alchemists were writing down the construction, not a
+metaphor for it.
+
+\hypertarget{appendix-index-of-formal-results}{%
+\subsection{Appendix: index of formal
+results}\label{appendix-index-of-formal-results}}
+
+All modules build against Mathlib v4.28.0. No sorries, no
+\texttt{native\_decide}.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{GateOrdering.lean}: \texttt{trace\_closes\_iff\_special},
+  \texttt{traced\_needs\_frobenius}, \texttt{terminal\_le\_traced},
+  \texttt{terminal\_le\_frobenius},
+  \texttt{frobenius\_strictly\_below\_traced},
+  \texttt{traced\_strictly\_below\_terminal},
+  \texttt{g1\_is\_a\_real\_barrier}, \texttt{gate\_ordering\_theorem};
+  and the order-freedom block \texttt{gate\_free\_commute}, the inert
+  lemmas, \texttt{parity\_stage\_couples},
+  \texttt{gate\_free\_order\_freedom}.
+\item
+  \texttt{TimeFixedPoint.lean}: \texttt{work\_fixed\_iff\_special},
+  \texttt{time\_least\_fixed\_point},
+  \texttt{no\_time\_before\_frobenius},
+  \texttt{time\_has\_passed\_gates}, \texttt{stone\_is\_sealed\_time},
+  \texttt{time\_is\_derived}.
+\item
+  \texttt{TierRefinement.lean}: \texttt{refines\_O\_inf},
+  \texttt{sealed\_requires\_frobenius},
+  \texttt{terminal\_implies\_sealed},
+  \texttt{sealed\_iff\_terminal\_on\_monad},
+  \texttt{sealed\_at\_roar\_need\_not\_close},
+  \texttt{completed\_classifier}.
+\item
+  \texttt{01\_conventional\_decomposition.md}: the full symbol-by-symbol
+  reading.
+\end{itemize}
