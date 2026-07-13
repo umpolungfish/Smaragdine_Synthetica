@@ -1,27 +1,26 @@
-Solve et coagula: fuse ALKAHEST and the theory of math into REBIS.md
+Second eagle of REBIS.md: re-coagulated on the morphism data
 
-The two manuscripts each held one hand of the same operator. ALKAHEST is the
-solvent, verification as imscription in the d=12 SIC frame; the alchemical
-theory of mathematics is the stone, the kernel-checked forced derivation order
-of structural type. Both stand on mu after delta = id, and that equation is
-simultaneously the solvent's lossless-return test and the stone's first gate,
-so the conjunction happens exactly where the tradition places the wedding, at
-stage 4 on the parity axis.
+Not an annealing of new sections onto the old spine; the whole document went
+back in the retort with FrobeniusIso.lean in the flask and recrystallized.
+The first distillation argued the union in the weaker formal shape, a
+conjunction with a shared conjunct: both manuscripts stand on mu after delta
+= id. The kernel now holds the paradigm witness in the stronger shape, the
+relationship itself as data, so the rebis is re-derived from that ground up.
 
-manuscripts/rebis/REBIS.md dissolves both to their load-bearing structure and
-coagulates one argument. New joints, each marked as theorem, checked witness,
-or reading: the two strict-inclusion theorems are Jabir's balance-is-not-the-
-work made formal; the type-as-verdict format is meaningful because the tuple
-has proved coordinates to diverge at; the two composites (lossless return vs
-forgetful idempotent, LiarIdempotent.lean) are the formal content of the
-same-in-type-different-in-form closure demand; verification is available
-exactly where time is (the special class); and the falsifiable one, Zosimos's
-six-command Stilling Practice promotes D, Th, Phi, C, crit, Omega in an order
-that satisfies G1 before G2 before G3 with the float interleaved where the
-order-freedom theorem permits. A 3rd-century protocol satisfies a 21st-century
-ordering theorem, command for command.
+The new architecture: section 0 defines a rebis formally as an equivalence,
+one body, two heads, morphism data carried in the figure; section 1 dissolves
+both parents to their invariants; section 2 is the new nucleus, the explicit
+equivalence with inverse laws, naturality squares, transported Frobenius
+condition, and the rfl-definitional fixed point, plus the two composites,
+fixing the plane of isomorphic compositions rather than lossy approximations;
+section 3 re-derives every union claim on that plane, with R/W/X read as
+toFun, invFun, and the inverse laws, so verification IS construction read
+backward through a structure-preserving change of presentation; section 4
+keeps the two heads (fusion_forgets forbids a one-headed rebis); section 5
+adds the new prohibition, no lossy-approximation discounting of a register
+readout; section 6 states the honest residue exactly, an isomorphism claim is
+as wide as the transported signature and no wider, truth-order connectives
+and further pairs of presentations still owe their squares.
 
-The document is self-describing: it was produced by the operation it names,
-two works dissolved and fused with the closure check being that nothing
-load-bearing was lost. The rebis keeps two heads on one body; collapsing
-verification into construction outright would contradict fusion_forgets.
+The document remains self-describing, now twice over: it records that it is
+the second distillation and what the eagle dissolved to produce it.
