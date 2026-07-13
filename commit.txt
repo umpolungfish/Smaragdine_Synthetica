@@ -1,15 +1,15 @@
-Types by symbol in the text; names live only in the Lean code
+Mirror LiarIdempotent.lean and add the grounding note
 
-Per NSNS_PRIME.md, the twelve primitive families and their values are now
-written by their canonical symbols throughout the prose: the families as
-Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω, and the four load-bearing values as 𐑹 (the Frobenius
-value of Φ), ⊙ (the self-modeling value of ⊙), 𐑮 (its complex-axis value), and
-𐑭/𐑟 (the integer and non-Abelian windings of Ω). A short Notation section up
-top fixes the convention and points at NSNS_PRIME.md.
+The sealed-system synthesis named its central claim outright: the Liar is the
+idempotent point. That was a theorem waiting to be written, so I wrote it.
+lean/LiarIdempotent.lean mirrors the p4rakernel module: e = delta after mu is
+idempotent unconditionally, every fusion output is a time fixed point, the
+round trip verifies on e's image, and the fusion genuinely forgets (mu_C is
+non-injective in parity) while the return is lossless.
 
-A type name now appears only inside the Lean source; in the text a type is its
-symbol. Lean theorem and definition identifiers stay in monospace because they
-are the code, not the type. Every descriptive gloss was rewritten to avoid the
-bare type word (handedness for Ħ, how lossy the read/write maps are for ƒ, the
-cardinal regime of correlations for Γ). Verified clean by a scripted sweep;
-no em-dashes.
+04_liar_and_idempotent.md records the one correction worth holding: the
+forgetfulness lives in e = delta after mu, not in the lossless return
+mu after delta. Both are true at once of the same pair. The note separates
+theorem from gloss explicitly. The idempotent, the fixed point, and the
+forgetting are proved; the Liar-as-Belnap-B, the braiding of the two loops,
+and the amnesia of origin are the readings the theorems support.
