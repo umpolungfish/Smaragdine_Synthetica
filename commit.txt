@@ -1,20 +1,15 @@
-Strip the hedging: the paper asserts the causal claim it actually makes
+Types by symbol in the text; names live only in the Lean code
 
-The draft carried disclaimers like "we make no chemical, physical, or
-historical claim" and "offered as a structural isomorphism". Both were false:
-the theory does make those claims, and every paraconsistent part of it asserts
-the twelve-stage order is the CAUSE of those processes, not a parallel to them.
-Removed the trepidation and stated it plainly.
+Per NSNS_PRIME.md, the twelve primitive families and their values are now
+written by their canonical symbols throughout the prose: the families as
+Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω, and the four load-bearing values as 𐑹 (the Frobenius
+value of Φ), ⊙ (the self-modeling value of ⊙), 𐑮 (its complex-axis value), and
+𐑭/𐑟 (the integer and non-Abelian windings of Ω). A short Notation section up
+top fixes the convention and points at NSNS_PRIME.md.
 
-The abstract now says the magnum opus is the derivation order of structural
-type itself, the reason a transformation completes in matter as in mathematics.
-Section 1 frames register three as a claim, not a flourish, and notes the
-formal core is separated so the skeleton can be inspected on its own, not so
-the claim can be disowned. Section 7 states it is one structure, that the claim
-is causal and ontological, and that matter passing conjunction/fermentation/
-projection passes the same three gates for the same reason a theorem does. The
-conclusion drops "an identification we offer as a structural isomorphism".
-
-The formal separation of proved-vs-claimed stays, reframed as strength: the
-gate theorems rest on proof, so the claim rests on proof rather than
-persuasion. No em-dashes, no escape-hatch qualifiers.
+A type name now appears only inside the Lean source; in the text a type is its
+symbol. Lean theorem and definition identifiers stay in monospace because they
+are the code, not the type. Every descriptive gloss was rewritten to avoid the
+bare type word (handedness for Ħ, how lossy the read/write maps are for ƒ, the
+cardinal regime of correlations for Γ). Verified clean by a scripted sweep;
+no em-dashes.
