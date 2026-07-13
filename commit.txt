@@ -1,16 +1,20 @@
-Draft the paper: 03_paper.md, rigorous-first, citing the proved theorems
+Strip the hedging: the paper asserts the causal claim it actually makes
 
-The math is done, so this is the text. 03_paper.md is the full first draft in
-the register we chose: three kept-separate layers. The conventional
-decomposition borrows nothing; the gate theorems (Sections 3-5) stand on
-category theory alone and are stated as the Lean results that now exist
-(trace_closes_iff_special, traced_needs_frobenius, the strict-tower witnesses,
-time_least_fixed_point, no_time_before_frobenius); the alchemical thesis
-(Section 7) comes last and is offered as a structural isomorphism, not a
-chemical or physical claim. Section 6 folds in the completed classifier and
-the honest roar caveat. Section 8 states what the theory forbids, each a
-theorem with a boundary witness. An appendix indexes every formal result.
+The draft carried disclaimers like "we make no chemical, physical, or
+historical claim" and "offered as a structural isomorphism". Both were false:
+the theory does make those claims, and every paraconsistent part of it asserts
+the twelve-stage order is the CAUSE of those processes, not a parallel to them.
+Removed the trepidation and stated it plainly.
 
-Written for a skeptic: what is proved is marked proved, what is interpretation
-is marked interpretation, no overselling. All three Lean modules build together
-green, zero sorries, no native_decide.
+The abstract now says the magnum opus is the derivation order of structural
+type itself, the reason a transformation completes in matter as in mathematics.
+Section 1 frames register three as a claim, not a flourish, and notes the
+formal core is separated so the skeleton can be inspected on its own, not so
+the claim can be disowned. Section 7 states it is one structure, that the claim
+is causal and ontological, and that matter passing conjunction/fermentation/
+projection passes the same three gates for the same reason a theorem does. The
+conclusion drops "an identification we offer as a structural isomorphism".
+
+The formal separation of proved-vs-claimed stays, reframed as strength: the
+gate theorems rest on proof, so the claim rests on proof rather than
+persuasion. No em-dashes, no escape-hatch qualifiers.

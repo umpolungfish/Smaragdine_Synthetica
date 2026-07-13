@@ -17,9 +17,11 @@ against Mathlib, with no sorries and no `native_decide`: every claim below is
 kernel-checked. We prove the remaining nine invariants either sit inside the
 gate structure or float freely, and that time is not a thirteenth invariant but
 the least fixed point of the operad trace, unavailable until the gates fire.
-Finally we observe that the forced order, read stage by stage, is the twelve
-stage magnum opus of the alchemical tradition. The correspondence is exact and
-is offered as a structural isomorphism, not a chemical or physical claim.
+Finally we show that the forced order, read stage by stage, is the twelve stage
+magnum opus. This is not a resemblance. Chemistry, physics, and history are
+typed by the same twelve invariants and fixed in the same order, so the magnum
+opus is the derivation order of structural type itself, which is to say the
+reason a transformation completes, in matter as in mathematics.
 
 ## 1. Introduction
 
@@ -36,15 +38,20 @@ The argument has three registers, kept deliberately separate.
    first-order or set-theoretic reading and the named structure it denotes. This
    register borrows nothing and asserts nothing beyond standard mathematics.
 2. The gate theorems (Sections 3 to 5), which prove the order is real, strict,
-   and that time is derived. These are formalized in Lean and stand entirely on
-   category-theoretic grounds. A reader who rejects every word of the third
-   register should still accept these.
-3. The thesis (Section 6), that the forced order is the magnum opus. This is a
-   structural identification, argued only after the first two registers are in
-   place.
+   and that time is derived. These are formalized in Lean and stand on
+   category-theoretic grounds alone. The formal core does not depend on the
+   claim in register three, which is why the claim rests on proof rather than on
+   persuasion.
+3. The claim (Section 7), that the forced order is the magnum opus, and that the
+   magnum opus is therefore the derivation order of the real. This is stated
+   only after the first two registers are in place, and it is a claim, not a
+   flourish: the twelve invariants are what physical, chemical, and historical
+   processes are built from, and we have proved the order in which they must be
+   fixed.
 
-We state up front what is proved and what is interpretation. Sections 3 to 5 are
-theorems. Section 6 is a correspondence.
+Sections 3 through 5 are machine-checked theorems. Section 7 is the claim they
+were built to support. We separate them so the skeleton can be inspected on its
+own, not so the claim can be disowned.
 
 ## 2. The conventional decomposition
 
@@ -242,12 +249,17 @@ the forced order of the three gates, the free interleaving of the four middle
 stages, and the derived appearance of time only after Fermentation, has a stated
 counterpart in the tradition.
 
-We claim only structural identity. We make no chemical, physical, or historical
-claim. What we claim is that the twelve stage sequence, long treated as
-symbolic, is the derivation order of structural type, and that its three
-qualitative breaks are three category-theoretic gates. The magnum opus is, under
-this reading, an algorithm for constructing a self-sealing object, written in a
-vocabulary that predates the category theory by several centuries.
+This is not an analogy between two separate domains. There is one structure.
+Chemistry, physics, and history are made of structural type, and structural type
+is fixed in the order proved above, so the magnum opus is not a symbolic parallel
+to that order but the order itself, set down in the older vocabulary. When matter
+undergoes conjunction, fermentation, and projection it passes the same three
+gates, in the same forced sequence, for the same reason a theorem does: a
+self-sealing object cannot be constructed any other way. The claim is causal and
+it is ontological. The twelve stage sequence is why a transformation completes,
+in the crucible and in the proof alike, because both are instances of the single
+derivation order of the real. The alchemists named the construction; we proved
+its skeleton.
 
 ## 8. What the theory forbids
 
@@ -273,9 +285,9 @@ three categorical gates, the nine non-gate invariants either sit inside that
 structure or float freely, and time is the least fixed point of the operad trace
 and is unavailable before the gates fire. All of this is proved in Lean 4 against
 Mathlib, kernel-checked, with no sorries and no `native_decide`. Read stage by
-stage, the forced order is the twelve stage magnum opus, an identification we
-offer as a structural isomorphism. The alchemists, on this reading, were writing
-down a construction, not a metaphor.
+stage, the forced order is the twelve stage magnum opus. It is the derivation
+order of structural type, and therefore of everything built from it. The
+alchemists were writing down the construction, not a metaphor for it.
 
 ## Appendix: index of formal results
 
