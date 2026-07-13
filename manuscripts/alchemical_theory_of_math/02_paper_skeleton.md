@@ -202,6 +202,12 @@ So the theory's cleanest form holds: 5-8 commute and float; 4, 9, 12 are forced.
 - Which conventional theorem best witnesses G2 (trace opens)? Candidate:
   existence of a trace on a compact-closed category (Joyal-Street-Verity). This
   is a naming/citation task for Section 3 prose, not a proof obligation.
-- Should Ω refine O_inf inside `Core.lean` (sealed/unsealed), making the tier
-  function itself carry G3? Currently G3 lives in `unlockTerminal`. Additive,
-  optional; only needed if the paper wants the tier classifier to be complete.
+- ~~Should Ω refine O_inf (sealed/unsealed) so the tier classifier carries
+  G3?~~ DONE (2026-07-12), `TierRefinement.lean`, additive (Core untouched),
+  builds green, no sorries. `sealedTier` splits O_inf by winding;
+  `refines_O_inf` proves the split is exact; `sealed_requires_frobenius` ties
+  sealing to G1; `terminal_implies_sealed` and `sealed_iff_terminal_on_monad`
+  prove the refined tier IS G3 on the Hermitian (monad) branch; and
+  `sealed_at_roar_need_not_close` surfaces the honest caveat — a sealed tuple at
+  complex-axis (roar) criticality is O_inf and winding-protected yet its real
+  Frobenius trace does not close. `completed_classifier` bundles it.

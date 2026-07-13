@@ -1,9 +1,6 @@
-Mirror TimeFixedPoint and mark Section 4 (time as derived) PROVED
+Mirror TierRefinement and mark mismatch #2 resolved in the skeleton
 
-T = Work(T) as the least fixed point of the operad trace is now a theorem.
-lean/TimeFixedPoint mirrors the proof from the buildable tree: Work is the
-trace, its fixed points are exactly the Frobenius-special class,
-time_least_fixed_point gives lfp_trace as the componentwise-least fixed point
-over the twelve axis LinearOrders, and no_time_before_frobenius proves the
-equation is unsolvable before G1 — time is derived, not primitive. The paper
-skeleton Section 4 now records the theorem names to cite.
+Omega now refines O_inf into sealed/unsealed, closing the last structural gap.
+lean/TierRefinement mirrors the proof: the split is exact (refines_O_inf), it
+ties to G1 and G3, and it surfaces the roar caveat honestly. The skeleton open
+list marks the tier refinement done with the theorem names to cite.
