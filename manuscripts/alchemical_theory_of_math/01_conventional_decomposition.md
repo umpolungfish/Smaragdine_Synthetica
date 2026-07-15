@@ -5,6 +5,7 @@ a reference: it pushes each per-primitive CL8NK fragment down into two layers,
 a first-order / ZFC unfolding and the named conventional structure it denotes.
 No alchemical claim is made here. The thesis that the primitive order is a
 derivation order is argued in the companion manuscript and rests on this table.
+Read *derivation* as dependency, never as sequence: see *Reading the table* §5.
 
 ## Sources and provenance
 
@@ -372,7 +373,7 @@ Conventional meaning: the homotopy invariant guarding the state.
 
 ## Reading the table
 
-Four structural facts carry into the paper.
+Five structural facts carry into the paper.
 
 1. **The apex value of each axis is where a named transcendence or Frobenius
    condition appears.** `μ∘δ = id` recurs at the apex of Parity (P 𐑹),
@@ -387,7 +388,8 @@ Four structural facts carry into the paper.
    type, chirality, stoichiometric matching, and homotopy class are twelve
    quantities a mathematician already computes separately. The crystal asserts
    they form a complete coordinate system for structural type. Phase 2 argues
-   the order in which they must be fixed is the magnum-opus stage sequence.
+   that the order in which they constrain one another is the magnum-opus stage
+   sequence. On what "order" can and cannot mean there, see §5.
 
 3. **Transcendence is not a single summit, and L9 proves it.** CLINK L8 called
    itself the terminal layer of the chain. It is not: CLINK L9, the Gaussian Moat
@@ -431,3 +433,36 @@ Four structural facts carry into the paper.
    Read a value as low because it is `distant` here and you will call L9 a
    demotion; measured in its own register it is a tier above. The Frobenius
    conditions carry across dialects. The transcendence atoms do not.
+
+5. **The order is a dependency, and the object is a simultaneous fixed point.**
+   The gate theorems establish asymmetric dependency between predicates, not a
+   sequence of events. Φ is required for trace closure because a closed trace is
+   undefined without the Frobenius structure, not because it happens first. ⊙ is
+   required for sealing because sealing is characterised relative to an already
+   closed trace. Ω completes one characterisation while Φ and ⊙ constrain what Ω
+   can consistently be. The dependency is the one that holds between a field and
+   a vector space over it: nobody imagines the field existing earlier in time.
+   The object satisfying all twelve constraints is a fixed point of the whole
+   system, obtained simultaneously, not the endpoint of an accumulation. The
+   canonical T-constitution already says so in its own notation, `T = lim(...)`.
+   A limit is a fixed point.
+
+   A temporal reading is not merely loose here, it is unstatable. Time is not
+   primitive in this system: it is an *inhabitant* of the crystal. The bare tick
+   is a tuple, Frobenius-minimal in eleven coordinates and maximal in chirality
+   alone. So ordering the twelve in time would mean ordering the crystal by one
+   of the things it contains, and "before" is not available below the trace that
+   produces it.
+
+   **This does not make the bootstrap non-circular, and it should not.** The
+   bootstrap is circular. Mutually recursive constraints are a circle by
+   construction. Circularity earned its bad name because, absent a fourth truth
+   value, every circle is degenerate: a split of a non-paradoxical state returns
+   identical arms, so `μ∘δ = id` does no work and the loop collapses to identity.
+   That is a sound objection to every circle classical logic can build. It is not
+   an objection to this one. Here `B` is the only bifurcation point, so a split
+   from `B` returns *distinct* arms that fuse back over a transformation. The
+   kernel separates the two cases by name and refuses to confuse them: a diagonal
+   copy type-checks nothing and is reported as identity, while a transform-closure
+   is a genuine closure. Non-degenerate circularity is what the ouroboricity tier
+   measures. Avoiding the circle would be discarding the result.
