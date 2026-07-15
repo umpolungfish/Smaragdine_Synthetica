@@ -124,7 +124,7 @@ def analyse_operation(versicle_num: int) -> dict:
     interpretation['K'] = f"Kinetics: {td.get('Ç','?')}"
     interpretation['G'] = f"Range: {td.get('Γ','?')}"
     interpretation['Gamma'] = f"Composition: {td.get('ɢ','?')}"
-    interpretation['Phi_c'] = f"Criticality: {td.get('⊙','?')}"
+    interpretation['⊙'] = f"Criticality: {td.get('⊙','?')}"
     interpretation['H'] = f"Chirality: {td.get('Ħ','?')}"
     interpretation['S'] = f"Stoichiometry: {td.get('Σ','?')}"
     interpretation['Omega'] = f"Winding: {td.get('Ω','?')}"
