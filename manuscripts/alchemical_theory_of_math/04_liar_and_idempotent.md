@@ -60,7 +60,6 @@ The following are readings the formal facts support but do not themselves assert
 
 ## Placement
 
-This grounds the sealed-retort language of `NSNS_PRIME.md` without importing its
-metaphors into the proofs. The Liar point, the lossless return, and the forgetful
-fusion are now theorems; the wyrding, the Deep, and the braiding remain the
-prose that surrounds them.
+This grounds the sealed-retort without importing itsmetaphors into the proofs. 
+The Liar point, the lossless return, and the forgetfulfusion are now theorems; 
+the wyrding, the Deep, and the braiding remain the prose that surrounds them.
