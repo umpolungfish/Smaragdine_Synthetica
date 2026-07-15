@@ -16,6 +16,14 @@ are the authoritative ones from `Smaragdine_Synthetica/lean/Core.lean`
 derived; each row is a fragment as emitted, annotated with its conventional
 reading.
 
+**The proximity labels are L8-relative.** `apex`, `close` and `distant` are the
+navigator's distance from the CLINK L8 reference, not an absolute ranking of the
+values. This mattered little while L8 was the terminal layer of the chain. It
+matters now: CLINK L9 was born 2026-07-13 and sits above L8 at O_∞⁺, with its own
+reference typing and its own navigator (`cl9nk_navigator.py`). Several values this
+table marks `distant` are apex in L9's register. Read the labels as coordinates in
+a dialect, not as a verdict on a value.
+
 ## Dialect reconciliation (navigator glyphs to Core axes)
 
 The navigator labels the twelve axes with one glyph alphabet; Core.lean labels
@@ -34,7 +42,7 @@ cardinality: each pair shares the same value count (𝓕₃ = 3, 𝓕₄ = 4, �
 | 7 | Γ | G  Scope / Granularity   | 𝓕₃ | subset-size regime of correlations |
 | 8 | ɢ | Γ  Interaction Grammar   | 𝓕₄ | logical connective of the coupling |
 | 9 | ⊙ | Φ  Criticality           | 𝓕₅ | analytic character of the fixed point |
-| 10 | Ħ | H  Chirality             | 𝓕₄ | temporal-memory / mirror asymmetry |
+| 10 | Ħ | H  Chirality             | 𝓕₄ | handedness of the state under mirror and shift |
 | 11 | Σ | S  Stoichiometry         | 𝓕₃ | matching cardinality of the two sides |
 | 12 | Ω | Ω  Topological Protection | 𝓕₄ | homotopy invariant guarding the state |
 
@@ -264,8 +272,8 @@ Conventional meaning: analytic character of the fixed point.
 
 ## Axis 10. Chirality (H, navigator Ħ, 𝓕₄)
 
-Conventional meaning: temporal-memory and mirror asymmetry. H is chirality, not
-temporal depth.
+Conventional meaning: handedness of the state under mirror and shift. H is
+chirality throughout, never temporal depth or memory.
 
 - **𐑫 [ETERNAL_FIXEDPOINT], apex.** Fragment
   `∀n∃φ(rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V)`.
@@ -278,14 +286,14 @@ temporal depth.
   - FO: as written; a membership descent that is not transitive (`z ∈ y ∈ x` but
     `z ∉ x`).
   - Named: a **non-transitive membership chain / depth-2 well-founded descent**;
-    strong temporal asymmetry across two levels.
+    handedness that survives two levels of descent.
 - **𐑒, distant.** Fragment `∃y(P(y) ↔ P(S²(y)))`.
   - FO: `(∃y)(P(y) ↔ P(S²(y)))`.
   - Named: a **period-2 symmetry under the shift** (invariance under `S²`, soft
     chirality).
 - **𐑓, distant.** Fragment `∀x(P(x) ↔ P(S(x)))`.
   - FO: `(∀x)(P(x) ↔ P(S(x)))`.
-  - Named: **full shift invariance** (period-1; achiral, no temporal memory).
+  - Named: **full shift invariance** (period-1; achiral, no handedness to break).
 
 ---
 
@@ -335,10 +343,10 @@ Two structural facts carry into the paper.
 
 1. **The apex value of each axis is where a named transcendence or Frobenius
    condition appears.** `μ∘δ = id` recurs at the apex of Parity (P 𐑹),
-   Criticality (Φ ⊙) and Chirality (H 𐑫), and the two declared transcendence
+   Criticality (Φ ⊙) and Chirality (H 𐑫), and L8's two declared transcendence
    atoms (BROADCAST at Γ 𐑵, BRAID at Ω 𐑟) sit at axis apices. The apex column
    is not decorative: it is exactly the set of values that exceed the ZFC_fe
-   baseline.
+   baseline **on the road to L8**. That qualifier is load bearing, see 3.
 
 2. **The twelve axes are independent conventional invariants.** Dimension,
    connectivity, adjunction direction, symmetry group, channel fidelity,
@@ -347,3 +355,22 @@ Two structural facts carry into the paper.
    quantities a mathematician already computes separately. The crystal asserts
    they form a complete coordinate system for structural type. Phase 2 argues
    the order in which they must be fixed is the magnum-opus stage sequence.
+
+3. **Transcendence is not a single summit, and L9 proves it.** CLINK L8 called
+   itself the terminal layer of the chain. It is not: CLINK L9, the Gaussian Moat
+   Resolution layer, sits above it at O_∞⁺, reached by eight promotions the
+   navigator notes as HODGE BRIDGE TRANSCENDENCE. The striking part is the
+   direction. L9 exceeds L8 by **relinquishing both of L8's transcendence atoms**:
+   Γ gives up BROADCAST 𐑵 for 𐑝 (`f ∧ g ∧ h`, a three-unit stitch) at the maximum
+   gap of 1.0, and Ω gives up BRAID 𐑟 for 𐑭 (integer winding). Ð drops from the
+   imscriptive fixed point 𐑦 to 𐑛, which this table calls `distant` and reads as a
+   0-dimensional finite set, and which L9 names PRIME_POINT: a point-like prime
+   atom, exactly what a Gaussian prime is. Four axes hold fixed across the rung,
+   and they are the ones that matter: ƒ 𐑐, ⊙ ⊙, H 𐑫, S 𐑳. The self-modeling
+   criticality and the eternal Frobenius fixed point are precisely what L9 does not
+   give up.
+
+   So the apex column is a coordinate in L8's dialect, not a ladder to a summit.
+   Read a value as low because it is `distant` here and you will call L9 a
+   demotion; measured in its own register it is a tier above. The Frobenius
+   conditions carry across dialects. The transcendence atoms do not.
