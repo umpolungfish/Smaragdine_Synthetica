@@ -1,37 +1,33 @@
-Ç is potential, not a rate, and its own ladder says so
+Ħ is chirality everywhere, including in Core.lean's own comments
 
-I had Axis 6 glossed as "relaxation timescale versus observation time", which is
-the rate reading, and the rate reading cannot explain the axis's own shape. If Ç
-measured speed then more τ would be more of whatever Ç measures and the apex
-would sit at the maximum. It does not. The apex is 𐑧 at ordinal 3, and both of
-the τ = ∞ values rank further out: 𐑪 at 4 and 𐑺 at 4.5. The peak is not the
-longest τ. It is the longest τ whose gate is open, which is why gate_open(x)
-appears in the apex fragment and nowhere else on the axis.
+The prohibition was protecting a theorem and I had it filed as a style rule.
+Temps is Frobenius-minimal in eleven coordinates and maximal in chirality alone;
+durée sits at Ç's open gate with chirality one step down. So
+temps_chirality_exceeds_duree_chirality is statable only because the temporal
+content lives in the HANDEDNESS. Call Ħ temporal memory and the theorem cannot
+be written down: memory would have to increase from the bare tick to lived
+duration, and chirality decreases.
 
-Read as potential the ladder is exact. τ ≪ T is potential already spent, so the
-object sits at the bottom of its well before you look at it. τ ≫ T with the gate
-open is the most potential that can still go: full store, open gate, and
-conventionally a reversible path, which is why work is extractable there. τ = ∞
-is held forever and inaccessible, ordered or MBL, maximum τ and unusable. A store
-that cannot discharge is not a larger store, and that is the whole reason the
-axis turns over at 3.
+Core.lean was the worst offender, which is the part worth saying out loud. The
+file the decomposition manuscript cites as the authority for axis names and
+ordinals opened its Chirality with "achiral, no temporal memory". The scripture
+carried the thing it forbids, in about a hundred copies.
 
-Ħ is the direction that store goes, and its fragments were already saying so. 𐑫
-is a tower of μ∘δ-fixed points at every rank, standing, nothing falling through
-it. 𐑖 is rank(z) < rank(y), a fall through rank. So 𐑫 is the tower standing and
-𐑖 is the tower spilling, and the step down from 𐑫 to 𐑖 is a discharge, not a
-loss. Neither axis moves anything alone: a full store with no handedness is
-frozen, and a direction with an empty store is a standing tower with nothing
-descending it.
+Rewrote the descriptions to what the fragments already say. fee is
+shift-invariant, so there is no handedness to break and nothing can fall. kick is
+period-2 under the shift. sure is rank(z) < rank(y), a descent through rank: the
+tower spilling. wool was already right, an inexhaustible tower standing.
 
-Added that as a fourth reading and pointed both axis sections at it. The two are
-read together or not at all.
+Axiom A reads better as itself too. "Deep temporal memory is preserved by kinetic
+freezing" is now "an inexhaustible tower stands because its store is frozen" —
+the same coupling of wool to on, stated in what the two axes are. The tower
+stands precisely because the potential cannot discharge.
 
-Both facts are formal rather than glossed, and the Lean already carries them: the
-bare tick is Frobenius-minimal in eleven coordinates and maximal in chirality
-alone, an empty store with an endless tower, while lived duration sits at Ç's
-open gate with chirality one step down, a full store descending. The gap between
-them is the ⊙ seam, which is precisely where a store is permitted to become a
-flow. That is also why H must stay chirality and never temporal depth: the
-temporal content lives in the handedness, and calling H memory makes the pair
-unstatable.
+393 descriptions across 100 files. Comments and prose only; no identifier, no
+tuple and no proof term is touched, so nothing rebuilds. Left alone on purpose:
+the ig_outputs run records, which really did say "deep temporal memory" in May
+and would be forged by editing, and a Core.lean.bak.
+
+Left "temporal asymmetry" standing where it appears in prose. The rule bans depth
+and memory; chirality under a shift genuinely is an asymmetry in time, and
+widening the ban to that would be me inventing scope rather than enforcing yours.
