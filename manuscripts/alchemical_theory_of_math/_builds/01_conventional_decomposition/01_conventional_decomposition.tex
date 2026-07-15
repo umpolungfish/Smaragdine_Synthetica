@@ -1,0 +1,1082 @@
+\documentclass[12pt,a4paper]{article}
+
+% Fonts — LuaLaTeX
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{Linux Libertine O}
+\setmathfont{Latin Modern Math}
+\newfontfamily\igprimfont{Everson Mono}
+\newfontfamily\shavfont[Scale=1.0]{Trabajo}
+\setmonofont[Scale=0.85]{DejaVu Sans Mono}
+\newcommand{\igfont}{\shavfont}
+
+% Shavian Unicode block (U+10450–U+1047F) → Trabajo automatically
+% Works in text mode, inside \text{} in math, and in table cells.
+\usepackage{newunicodechar}
+\newunicodechar{𐑐}{\ifmmode\text{{\shavfont 𐑐}}\else{{\shavfont 𐑐}}\fi}
+\newunicodechar{𐑑}{\ifmmode\text{{\shavfont 𐑑}}\else{{\shavfont 𐑑}}\fi}
+\newunicodechar{𐑒}{\ifmmode\text{{\shavfont 𐑒}}\else{{\shavfont 𐑒}}\fi}
+\newunicodechar{𐑓}{\ifmmode\text{{\shavfont 𐑓}}\else{{\shavfont 𐑓}}\fi}
+\newunicodechar{𐑔}{\ifmmode\text{{\shavfont 𐑔}}\else{{\shavfont 𐑔}}\fi}
+\newunicodechar{𐑕}{\ifmmode\text{{\shavfont 𐑕}}\else{{\shavfont 𐑕}}\fi}
+\newunicodechar{𐑖}{\ifmmode\text{{\shavfont 𐑖}}\else{{\shavfont 𐑖}}\fi}
+\newunicodechar{𐑗}{\ifmmode\text{{\shavfont 𐑗}}\else{{\shavfont 𐑗}}\fi}
+\newunicodechar{𐑘}{\ifmmode\text{{\shavfont 𐑘}}\else{{\shavfont 𐑘}}\fi}
+\newunicodechar{𐑙}{\ifmmode\text{{\shavfont 𐑙}}\else{{\shavfont 𐑙}}\fi}
+\newunicodechar{𐑚}{\ifmmode\text{{\shavfont 𐑚}}\else{{\shavfont 𐑚}}\fi}
+\newunicodechar{𐑛}{\ifmmode\text{{\shavfont 𐑛}}\else{{\shavfont 𐑛}}\fi}
+\newunicodechar{𐑜}{\ifmmode\text{{\shavfont 𐑜}}\else{{\shavfont 𐑜}}\fi}
+\newunicodechar{𐑝}{\ifmmode\text{{\shavfont 𐑝}}\else{{\shavfont 𐑝}}\fi}
+\newunicodechar{𐑞}{\ifmmode\text{{\shavfont 𐑞}}\else{{\shavfont 𐑞}}\fi}
+\newunicodechar{𐑟}{\ifmmode\text{{\shavfont 𐑟}}\else{{\shavfont 𐑟}}\fi}
+\newunicodechar{𐑠}{\ifmmode\text{{\shavfont 𐑠}}\else{{\shavfont 𐑠}}\fi}
+\newunicodechar{𐑡}{\ifmmode\text{{\shavfont 𐑡}}\else{{\shavfont 𐑡}}\fi}
+\newunicodechar{𐑢}{\ifmmode\text{{\shavfont 𐑢}}\else{{\shavfont 𐑢}}\fi}
+\newunicodechar{𐑣}{\ifmmode\text{{\shavfont 𐑣}}\else{{\shavfont 𐑣}}\fi}
+\newunicodechar{𐑤}{\ifmmode\text{{\shavfont 𐑤}}\else{{\shavfont 𐑤}}\fi}
+\newunicodechar{𐑥}{\ifmmode\text{{\shavfont 𐑥}}\else{{\shavfont 𐑥}}\fi}
+\newunicodechar{𐑦}{\ifmmode\text{{\shavfont 𐑦}}\else{{\shavfont 𐑦}}\fi}
+\newunicodechar{𐑧}{\ifmmode\text{{\shavfont 𐑧}}\else{{\shavfont 𐑧}}\fi}
+\newunicodechar{𐑨}{\ifmmode\text{{\shavfont 𐑨}}\else{{\shavfont 𐑨}}\fi}
+\newunicodechar{𐑩}{\ifmmode\text{{\shavfont 𐑩}}\else{{\shavfont 𐑩}}\fi}
+\newunicodechar{𐑪}{\ifmmode\text{{\shavfont 𐑪}}\else{{\shavfont 𐑪}}\fi}
+\newunicodechar{𐑫}{\ifmmode\text{{\shavfont 𐑫}}\else{{\shavfont 𐑫}}\fi}
+\newunicodechar{𐑬}{\ifmmode\text{{\shavfont 𐑬}}\else{{\shavfont 𐑬}}\fi}
+\newunicodechar{𐑭}{\ifmmode\text{{\shavfont 𐑭}}\else{{\shavfont 𐑭}}\fi}
+\newunicodechar{𐑮}{\ifmmode\text{{\shavfont 𐑮}}\else{{\shavfont 𐑮}}\fi}
+\newunicodechar{𐑯}{\ifmmode\text{{\shavfont 𐑯}}\else{{\shavfont 𐑯}}\fi}
+\newunicodechar{𐑰}{\ifmmode\text{{\shavfont 𐑰}}\else{{\shavfont 𐑰}}\fi}
+\newunicodechar{𐑱}{\ifmmode\text{{\shavfont 𐑱}}\else{{\shavfont 𐑱}}\fi}
+\newunicodechar{𐑲}{\ifmmode\text{{\shavfont 𐑲}}\else{{\shavfont 𐑲}}\fi}
+\newunicodechar{𐑳}{\ifmmode\text{{\shavfont 𐑳}}\else{{\shavfont 𐑳}}\fi}
+\newunicodechar{𐑴}{\ifmmode\text{{\shavfont 𐑴}}\else{{\shavfont 𐑴}}\fi}
+\newunicodechar{𐑵}{\ifmmode\text{{\shavfont 𐑵}}\else{{\shavfont 𐑵}}\fi}
+\newunicodechar{𐑶}{\ifmmode\text{{\shavfont 𐑶}}\else{{\shavfont 𐑶}}\fi}
+\newunicodechar{𐑷}{\ifmmode\text{{\shavfont 𐑷}}\else{{\shavfont 𐑷}}\fi}
+\newunicodechar{𐑸}{\ifmmode\text{{\shavfont 𐑸}}\else{{\shavfont 𐑸}}\fi}
+\newunicodechar{𐑹}{\ifmmode\text{{\shavfont 𐑹}}\else{{\shavfont 𐑹}}\fi}
+\newunicodechar{𐑺}{\ifmmode\text{{\shavfont 𐑺}}\else{{\shavfont 𐑺}}\fi}
+\newunicodechar{𐑻}{\ifmmode\text{{\shavfont 𐑻}}\else{{\shavfont 𐑻}}\fi}
+\newunicodechar{𐑼}{\ifmmode\text{{\shavfont 𐑼}}\else{{\shavfont 𐑼}}\fi}
+\newunicodechar{𐑽}{\ifmmode\text{{\shavfont 𐑽}}\else{{\shavfont 𐑽}}\fi}
+\newunicodechar{𐑾}{\ifmmode\text{{\shavfont 𐑾}}\else{{\shavfont 𐑾}}\fi}
+\newunicodechar{𐑿}{\ifmmode\text{{\shavfont 𐑿}}\else{{\shavfont 𐑿}}\fi}
+
+% Page layout
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+
+% Language
+\usepackage[english]{babel}
+
+% Headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Section styling — fully unnumbered; pipeline never auto-numbers
+\usepackage{titlesec}
+\setcounter{secnumdepth}{0}
+\titleformat{\section}{\Large\bfseries}{}{0em}{}
+\titleformat{\subsection}{\large\bfseries}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{}{0em}{}
+
+% Essential packages
+\usepackage{graphicx}
+\graphicspath{{/home/mrnob0dy666/imsgct/Smaragdine_Synthetica/manuscripts/alchemical_theory_of_math/}{/home/mrnob0dy666/imsgct/Smaragdine_Synthetica/manuscripts/alchemical_theory_of_math/images/}}
+\setkeys{Gin}{width=0.48\linewidth,height=0.32\textheight,keepaspectratio}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{amsmath}
+% unicode-math subsumes amssymb — do not load amssymb alongside it
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\renewcommand{\arraystretch}{1.3}
+
+% Cross-references
+\usepackage{hyperref}
+\usepackage{cleveref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=cyan, citecolor=teal}
+
+% Custom commands
+\newcommand{\shav}[1]{{\shavfont #1}}
+\newcommand{\heb}[1]{{\igprimfont #1}}
+\newcommand{\tupleaddr}[1]{$\langle #1 \rangle$}
+
+% Shorthand primitive commands — redefined for IG document use
+\renewcommand{\H}{Ħ}
+\newcommand{\K}{Ç}
+\newcommand{\G}{Γ}
+\newcommand{\g}{ɢ}
+\newcommand{\Th}{Þ}
+\newcommand{\D}{Ð}
+\newcommand{\R}{Ř}
+\newcommand{\f}{ƒ}
+
+% Imscription tuple box
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\newtcolorbox{imscriptionbox}{enhanced, colback=blue!5, colframe=blue!75!black, fontupper=\large, center upper, boxrule=1pt, arc=4pt}
+
+% PDF metadata
+\hypersetup{
+  pdftitle={01 Conventional Decomposition},
+  pdfkeywords={Imscribing Grammar},
+  pdfauthor={Lando Mills},
+}
+
+\title{01 Conventional Decomposition}
+\date{\today}
+\author{Lando Mills}
+
+\begin{document}
+\maketitle
+\hypertarget{conventional-decomposition-of-the-12-primitive-crystal}{%
+\section{Conventional Decomposition of the 12-Primitive
+Crystal}\label{conventional-decomposition-of-the-12-primitive-crystal}}
+
+Phase 1 of the Alchemical Theory of Mathematics. This document stands
+alone as a reference: it pushes each per-primitive CL8NK fragment down
+into two layers, a first-order / ZFC unfolding and the named
+conventional structure it denotes. No alchemical claim is made here. The
+thesis that the primitive order is a derivation order is argued in the
+companion manuscript and rests on this table.
+
+\hypertarget{sources-and-provenance}{%
+\subsection{Sources and provenance}\label{sources-and-provenance}}
+
+Every fragment below is quoted from \texttt{CL8NK\_FORMULAE} in
+\texttt{imscribing\_grammar/navigators/cl8nk\_navigator.py} (the
+per-primitive formula map, sourced in turn from
+\texttt{IG\_catalog.json}). Axis names and value orderings are the
+authoritative ones from \texttt{Smaragdine\_Synthetica/lean/Core.lean}
+(v0.5.69), whose constructor order defines the ordinals. Nothing here is
+hand derived; each row is a fragment as emitted, annotated with its
+conventional reading.
+
+\textbf{The proximity labels are L8-relative.} \texttt{apex},
+\texttt{close} and \texttt{distant} are the navigator's distance from
+the CLINK L8 reference, not an absolute ranking of the values. This
+mattered little while L8 was the terminal layer of the chain. It matters
+now: CLINK L9 was born 2026-07-13 and sits above L8 at O\_∞⁺, with its
+own reference typing and its own navigator
+(\texttt{cl9nk\_navigator.py}). Several values this table marks
+\texttt{distant} are apex in L9's register. Read the labels as
+coordinates in a dialect, not as a verdict on a value.
+
+\hypertarget{dialect-reconciliation-navigator-glyphs-to-core-axes}{%
+\subsection{Dialect reconciliation (navigator glyphs to Core
+axes)}\label{dialect-reconciliation-navigator-glyphs-to-core-axes}}
+
+The navigator labels the twelve axes with one glyph alphabet; Core.lean
+labels them with another. They are the same twelve axes in the same
+tuple positions. The correspondence below is fixed by fragment content
+and confirmed by family cardinality: each pair shares the same value
+count (𝓕₃ = 3, 𝓕₄ = 4, 𝓕₅ = 5).
+
+\begin{longtable}[]{@{}rclcl@{}}
+\toprule
+Pos & Navigator & Core axis & Family & Conventional axis
+meaning\tabularnewline
+\midrule
+\endhead
+1 & Ð & D Dimensionality & 𝓕₄ & recursive nesting depth of the state
+space\tabularnewline
+2 & Þ & T Topology & 𝓕₅ & connectivity pattern of the state
+graph\tabularnewline
+3 & Ř & R Relational Mode & 𝓕₄ & direction and duality of the binding
+relation\tabularnewline
+4 & Φ & P Parity / Symmetry & 𝓕₅ & symmetry group fixing the
+object\tabularnewline
+5 & ƒ & F Fidelity & 𝓕₃ & information loss of the read/write
+map\tabularnewline
+6 & Ç & K Kinetic Character & 𝓕₅ & potential held, and whether its gate
+is open\tabularnewline
+7 & Γ & G Scope / Granularity & 𝓕₃ & subset-size regime of
+correlations\tabularnewline
+8 & ɢ & Γ Interaction Grammar & 𝓕₄ & logical connective of the
+coupling\tabularnewline
+9 & ⊙ & Φ Criticality & 𝓕₅ & analytic character of the fixed
+point\tabularnewline
+10 & Ħ & H Chirality & 𝓕₄ & handedness: the direction a held potential
+can go\tabularnewline
+11 & Σ & S Stoichiometry & 𝓕₃ & matching cardinality of the two
+sides\tabularnewline
+12 & Ω & Ω Topological Protection & 𝓕₄ & homotopy invariant guarding the
+state\tabularnewline
+\bottomrule
+\end{longtable}
+
+Notation. \texttt{μ∘δ\ =\ id} is the special Frobenius condition: a
+comonoid split \texttt{δ} followed by a monoid fusion \texttt{μ} returns
+the identity, i.e.~\texttt{δ} is a section and \texttt{μ} a retraction
+of it (a split idempotent that is in fact the identity on the object).
+\texttt{V\ =\ L(x)} is the constructible-universe predicate.
+\texttt{rank} is the von Neumann set-theoretic rank. \texttt{S} denotes
+a shift/mirror successor operator.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{axis-1.-dimensionality-d-navigator-uxf0-ux1d4d5ux2084}{%
+\subsection{Axis 1. Dimensionality (D, navigator Ð,
+𝓕₄)}\label{axis-1.-dimensionality-d-navigator-uxf0-ux1d4d5ux2084}}
+
+Conventional meaning: recursive nesting depth of the state space, from a
+flat sheet up to a boundary-bulk imscriptive fixed point.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{𐑦 {[}HOLOGRAPHIC\_STATE{]}, apex.} Fragment
+  \texttt{V\ =\ L(x)\ ∧\ selfmodel(x)\ ∧\ x\ ∈\ V}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{V\ =\ L(x)\ ∧\ (∃m\ ∈\ x)(m\ codes\ x)\ ∧\ x\ ∈\ V}. The
+    object equals its own constructible closure, contains a code of
+    itself, and lies in the universe it generates.
+  \item
+    Named: a \textbf{reflexive / self-modeling object}; boundary-bulk
+    imscriptive correspondence (the boundary datum determines the bulk).
+    Fixed point of the constructibility operator, cf.~Gödel \texttt{L}
+    and a self-referential coding (diagonal lemma).
+  \end{itemize}
+\item
+  \textbf{𐑼, close.} Fragment
+  \texttt{∀n∃y(y\ ∈\ x\ ∧\ rank(y)\ \textgreater{}\ n)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: as written; \texttt{x} has members of unbounded rank.
+  \item
+    Named: \textbf{rank-unbounded set}; not set-like of bounded height,
+    i.e.~a proper class-like or limit-rank object. Infinite-dimensional
+    in the rank filtration.
+  \end{itemize}
+\item
+  \textbf{𐑨, distant.} Fragment \texttt{dim(x)\ =\ 2\ ∧\ sur(x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{dim(x)\ =\ 2\ ∧\ surface(x)}.
+  \item
+    Named: a \textbf{2-manifold / surface}; the flat sheet, homological
+    dimension 2.
+  \end{itemize}
+\item
+  \textbf{𐑛, distant.} Fragment \texttt{dim(x)\ =\ 0\ ∧\ fin(x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{dim(x)\ =\ 0\ ∧\ finite(x)}.
+  \item
+    Named: a \textbf{0-dimensional finite set}; discrete points,
+    hereditarily finite.
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{axis-2.-topology-t-navigator-uxfe-ux1d4d5ux2085}{%
+\subsection{Axis 2. Topology (T, navigator Þ,
+𝓕₅)}\label{axis-2.-topology-t-navigator-uxfe-ux1d4d5ux2085}}
+
+Conventional meaning: connectivity pattern of the state graph.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{𐑸 {[}HOLOBOUND{]}, apex.} Fragment
+  \texttt{bound\_⊙(a,\ f)\ ∧\ Refl(a,\ f)\ ∧\ holo(x,\ a)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{boundary(a)\ ∧\ reflects(a,\ f)\ ∧\ imscribes(x,\ a)};
+    the boundary \texttt{a} reflects the field \texttt{f} and losslessly
+    imscribes the bulk \texttt{x}.
+  \item
+    Named: a \textbf{boundary-bulk correspondence} (bounded reflection);
+    the bulk is reconstructible from boundary data.
+  \end{itemize}
+\item
+  \textbf{𐑥, close.} Fragment \texttt{cross(x,\ y)\ ∧\ ¬\ meet(x,\ y)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{cross(x,\ y)\ ∧\ ¬∃z(z\ ≤\ x\ ∧\ z\ ≤\ y)}.
+  \item
+    Named: a \textbf{bowtie / transversal crossing} with empty meet; two
+    cycles sharing a node but no common lower bound (a figure-eight,
+    bifurcation point).
+  \end{itemize}
+\item
+  \textbf{𐑶, distant.} Fragment \texttt{x\ ⊠\ y\ ∧\ irreducible(x,\ y)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{x\ ⊠\ y\ ∧\ irreducible(x,\ y)}.
+  \item
+    Named: an \textbf{irreducible tensor / box product}; no nontrivial
+    factorization.
+  \end{itemize}
+\item
+  \textbf{𐑡, distant.} Fragment \texttt{graph(x)\ ∧\ branch(x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{graph(x)\ ∧\ (∃v)\ deg(v)\ ≥\ 3}.
+  \item
+    Named: a \textbf{branching graph / tree with vertices of degree ≥
+    3}.
+  \end{itemize}
+\item
+  \textbf{𐑰, distant.} Fragment \texttt{x\ ⊆\ y\ ∧\ cont(y)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{x\ ⊆\ y\ ∧\ continuous(y)}.
+  \item
+    Named: \textbf{nested inclusion into a continuum}; hierarchical
+    containment.
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{axis-3.-relational-mode-r-navigator-ux159-ux1d4d5ux2084}{%
+\subsection{Axis 3. Relational Mode (R, navigator Ř,
+𝓕₄)}\label{axis-3.-relational-mode-r-navigator-ux159-ux1d4d5ux2084}}
+
+Conventional meaning: direction and duality of the binding relation.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{𐑾 {[}LR\_DUAL{]}, apex.} Fragment
+  \texttt{lr⇔(x,\ y)\ ∧\ Θ(x,\ y)\ ∧\ ¬\ Θ(y,\ x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{(x\ ⇔\ y)\ ∧\ Θ(x,\ y)\ ∧\ ¬Θ(y,\ x)}; lateral
+    biconditional binding with an asymmetric twist \texttt{Θ}.
+  \item
+    Named: a \textbf{left-right dual pair} with directed obstruction; a
+    symmetric peer relation carrying a nonsymmetric cocycle (the bowtie
+    duality of two sides that mutually determine yet do not dominate
+    each other).
+  \end{itemize}
+\item
+  \textbf{𐑽, close.} Fragment \texttt{f\ ⊣\ g\ ∧\ L\ Adj(f,\ g)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{f\ ⊣\ g}; \texttt{f} is left adjoint to \texttt{g}.
+  \item
+    Named: an \textbf{adjunction} (unit/counit with the triangle
+    identities); the categorical dagger-adjacent relation
+    \texttt{A\ ⊣\ A†}.
+  \end{itemize}
+\item
+  \textbf{𐑑, distant.} Fragment
+  \texttt{Fun(x,\ y)\ ∧\ Nat(y,\ z)\ →\ Fun(x,\ z)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{functor(x,\ y)\ ∧\ nat(y,\ z)\ →\ functor(x,\ z)}.
+  \item
+    Named: \textbf{functorial composition closed under natural
+    transformation}; the 2-categorical composition law.
+  \end{itemize}
+\item
+  \textbf{𐑩, distant.} Fragment \texttt{x\ ↑\ y\ ∧\ ¬(y\ ↑\ x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{dominates(x,\ y)\ ∧\ ¬dominates(y,\ x)}.
+  \item
+    Named: a \textbf{strict order / one-way supervisory relation}
+    (hierarchy).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{axis-4.-parity-symmetry-p-navigator-ux3c6-ux1d4d5ux2085}{%
+\subsection{Axis 4. Parity / Symmetry (P, navigator Φ,
+𝓕₅)}\label{axis-4.-parity-symmetry-p-navigator-ux3c6-ux1d4d5ux2085}}
+
+Conventional meaning: the symmetry group fixing the object.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{𐑹 {[}PM\_Z2{]}, apex.} Fragment
+  \texttt{ℤ₂(x)\ ∧\ ∀g∈G(gx\ =\ x)\ ∧\ μ∘δ\ =\ id}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO:
+    \texttt{ℤ₂\ ↷\ x\ ∧\ (∀g\ ∈\ G)(g·x\ =\ x)\ ∧\ (∀a)(μ(δ(a))\ =\ a)}.
+  \item
+    Named: a \textbf{split ℤ₂-retraction}: a ℤ₂ action under which
+    \texttt{x} is invariant, together with a section/retraction pair
+    \texttt{(δ,\ μ)} with \texttt{μ∘δ\ =\ id}. The signed subset-sum map
+    is the canonical instance: \texttt{δ} distributes an element over
+    \{in, out\}, \texttt{μ} sums, and their composite is the identity on
+    the index set. This is the special Frobenius / Cartesian-bicategory
+    identity, \texttt{μ} a split epi and \texttt{δ} a split mono.
+  \end{itemize}
+\item
+  \textbf{𐑿, close.} Fragment
+  \texttt{\textbar{}ψ⟩\ =\ Σ\ c\_i\ \textbar{}e\_i⟩}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{state(ψ)\ ∧\ ψ\ =\ Σ\_i\ c\_i\ e\_i} over an orthonormal
+    basis.
+  \item
+    Named: a \textbf{superposition in a complex Hilbert space} (U(1)
+    phase symmetry).
+  \end{itemize}
+\item
+  \textbf{𐑬, close.} Fragment \texttt{ℤ₂(x)\ ∧\ ¬(x\ =\ -x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{ℤ₂\ ↷\ x\ ∧\ x\ ≠\ -x}.
+  \item
+    Named: a \textbf{nontrivial ℤ₂ representation} (sign flip with no
+    fixed nonzero vector); the sign character acting freely.
+  \end{itemize}
+\item
+  \textbf{𐑯, distant.} Fragment \texttt{∀g∈G(gx\ =\ x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{(∀g\ ∈\ G)(g·x\ =\ x)}.
+  \item
+    Named: a \textbf{G-invariant / fixed point of the group action}
+    (full stabilizer).
+  \end{itemize}
+\item
+  \textbf{𐑗, distant.} Fragment \texttt{¬∃sym(x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{¬∃σ(σ\ ≠\ id\ ∧\ σ·x\ =\ x)}.
+  \item
+    Named: an \textbf{asymmetric object} (trivial automorphism group).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{axis-5.-fidelity-f-navigator-ux192-ux1d4d5ux2083}{%
+\subsection{Axis 5. Fidelity (F, navigator ƒ,
+𝓕₃)}\label{axis-5.-fidelity-f-navigator-ux192-ux1d4d5ux2083}}
+
+Conventional meaning: information loss of the read/write map.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{𐑐, apex.} Fragment \texttt{ℏ(x)\ ∧\ {[}x,\ p{]}\ =\ iℏ}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{quantum(x)\ ∧\ {[}x,\ p{]}\ =\ iℏ}.
+  \item
+    Named: a \textbf{canonical commutation relation}; lossless quantum
+    channel (unitary, information preserving).
+  \end{itemize}
+\item
+  \textbf{𐑞, close.} Fragment
+  \texttt{Tr(ρ²)\ \textless{}\ 1\ ∧\ ρ\ =\ Σ\ p\_i\ \textbar{}i⟩⟨i\textbar{}}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO:
+    \texttt{Tr(ρ²)\ \textless{}\ 1\ ∧\ ρ\ =\ Σ\_i\ p\_i\ \textbar{}i⟩⟨i\textbar{}}.
+  \item
+    Named: a \textbf{mixed state / density operator with nonzero
+    entropy} (threshold fidelity, partial loss).
+  \end{itemize}
+\item
+  \textbf{𐑱, distant.} Fragment \texttt{P(x)\ ∈\ \{0,1\}\ ∧\ det(x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{P(x)\ ∈\ \{0,\ 1\}\ ∧\ deterministic(x)}.
+  \item
+    Named: a \textbf{classical deterministic map} (projection to a
+    definite outcome, lossy read).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{axis-6.-kinetic-character-k-navigator-uxe7-ux1d4d5ux2085}{%
+\subsection{Axis 6. Kinetic Character (K, navigator Ç,
+𝓕₅)}\label{axis-6.-kinetic-character-k-navigator-uxe7-ux1d4d5ux2085}}
+
+Conventional meaning: \textbf{potential}, how much the object still
+holds, and whether the gate is open for it to go. τ is how long a
+disturbance is retained against the observation window, so it reads as a
+store, not a speed: τ ≪ T is potential already spent, τ ≫ T is potential
+still held.
+
+The ladder settles the reading on its own. If Ç were a rate, more τ
+would be more of whatever Ç measures and the apex would sit at the
+maximum. It does not. The apex is 𐑧 at ordinal 3, while 𐑪 (ordinal 4)
+and 𐑺 (4.5) are both further out, and both are the ones carrying τ = ∞.
+The peak is not the longest τ; it is the longest τ \textbf{whose gate is
+open}, which is why \texttt{gate\_open(x)} appears in the apex fragment
+and in none of the others. Past the apex the potential is still held and
+can no longer move. A store that cannot discharge is not a larger store.
+
+Potential alone does not move anything: Ç says how much is held, Ħ (Axis
+10) says whether there is a direction to hold it toward. See
+\emph{Reading the table} §4.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{𐑧, apex.} Fragment
+  \texttt{τ\ ≫\ T\ ∧\ eq(x)\ ∧\ gate\_open(x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{τ\ ≫\ T\ ∧\ equilibrium(x)\ ∧\ open(x)}.
+  \item
+    Named: a \textbf{quasi-static / adiabatic regime}: retained against
+    the probe and still able to discharge. Maximal \emph{available}
+    potential: the store is full and the gate is open. Conventionally, a
+    reversible path: work is extractable precisely because relaxation is
+    slow and nothing is pinned.
+  \end{itemize}
+\item
+  \textbf{𐑤, close.} Fragment \texttt{τ\ ∼\ T\ ∧\ noisy(x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{τ\ ≈\ T\ ∧\ noisy(x)}.
+  \item
+    Named: a \textbf{critically damped / noisy regime} (store and probe
+    on the same timescale; potential is leaking as fast as it is read).
+  \end{itemize}
+\item
+  \textbf{𐑘, distant.} Fragment \texttt{τ\ ≪\ T\ ∧\ ∂\_t\ x\ =\ f(x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{τ\ ≪\ T\ ∧\ ẋ\ =\ f(x)}.
+  \item
+    Named: a \textbf{fast deterministic flow} (autonomous ODE). Nothing
+    is retained: the potential discharges inside the observation window,
+    so the object is always already at the bottom of its well.
+  \end{itemize}
+\item
+  \textbf{𐑪, distant.} Fragment \texttt{τ\ =\ ∞\ ∧\ ord(x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{τ\ =\ ∞\ ∧\ ordered(x)}.
+  \item
+    Named: \textbf{frozen by order} (kinetically trapped, non-ergodic).
+    The store is infinite and inaccessible: held forever, ordered, with
+    no open gate. Maximum τ, unusable.
+  \end{itemize}
+\item
+  \textbf{𐑺, distant.} Fragment \texttt{τ\ =\ ∞\ ∧\ dis(x)\ ∧\ MBL}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{τ\ =\ ∞\ ∧\ disordered(x)\ ∧\ MBL(x)}.
+  \item
+    Named: \textbf{many-body localization} (frozen by disorder,
+    ergodicity broken). The same trap reached through disorder rather
+    than order, which is why it ranks past 𐑪 rather than beside it.
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{axis-7.-scope-granularity-g-navigator-ux3b3-ux1d4d5ux2083}{%
+\subsection{Axis 7. Scope / Granularity (G, navigator Γ,
+𝓕₃)}\label{axis-7.-scope-granularity-g-navigator-ux3b3-ux1d4d5ux2083}}
+
+Conventional meaning: subset-size regime of correlations.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{𐑲, apex.} Fragment
+  \texttt{∀y(y\ ⊂\ x\ →\ \textbar{}y\textbar{}\ \textless{}\ \textbar{}x\textbar{})}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO:
+    \texttt{(∀y)(y\ ⊊\ x\ →\ \textbar{}y\textbar{}\ \textless{}\ \textbar{}x\textbar{})}.
+  \item
+    Named: a \textbf{Dedekind-finite object}: no proper subset is
+    equinumerous with the whole. Strict cardinal drop under proper
+    inclusion (fine-grained, global correlations resolved at every
+    scale).
+  \end{itemize}
+\item
+  \textbf{𐑔, close.} Fragment
+  \texttt{∃y∈x(\textbar{}y\textbar{}\ ∼\ \textbar{}x\textbar{})}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO:
+    \texttt{(∃y\ ⊊\ x)(\textbar{}y\textbar{}\ =\ \textbar{}x\textbar{})}.
+  \item
+    Named: a \textbf{Dedekind-infinite object}: a proper subset in
+    bijection with the whole (intermediate / collective scale,
+    self-similarity present).
+  \end{itemize}
+\item
+  \textbf{𐑚, distant.} Fragment
+  \texttt{∀y∈x(\textbar{}y\textbar{}\ \textless{}\ \textbar{}x\textbar{})}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO:
+    \texttt{(∀y\ ∈\ x)(\textbar{}y\textbar{}\ \textless{}\ \textbar{}x\textbar{})}.
+  \item
+    Named: \textbf{element-wise strict smallness} (each member below the
+    whole; local / mesoscale, no member captures the aggregate).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{axis-8.-interaction-grammar-ux3b3-navigator-ux262-ux1d4d5ux2084}{%
+\subsection{Axis 8. Interaction Grammar (Γ, navigator ɢ,
+𝓕₄)}\label{axis-8.-interaction-grammar-ux3b3-navigator-ux262-ux1d4d5ux2084}}
+
+Conventional meaning: the logical connective of the coupling.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{𐑵 {[}BROADCAST\_TRANSCENDENCE{]}, apex.} Fragment
+  \texttt{f\ →\ all(x)\ ∧\ broadcast(x,\ f)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{(∀z)(f(z))\ ∧\ broadcast(x,\ f)}; one map applied to
+    all, one-to-all coupling.
+  \item
+    Named: a \textbf{universal / broadcast quantifier} (\texttt{∀} as a
+    single coupling to the whole domain); a transcendence atom,
+    exceeding finitary composition.
+  \end{itemize}
+\item
+  \textbf{𐑠 {[}SEQAX{]}, close.} Fragment
+  \texttt{seq!(f,\ g)\ ∧\ ⟨→⟩(f,\ g,\ τ)\ ∧\ ¬\ ⟨→⟩(g,\ f,\ τ)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{seq(f,\ g)\ ∧\ (f\ →\_τ\ g)\ ∧\ ¬(g\ →\_τ\ f)}.
+  \item
+    Named: a \textbf{strict sequencing / causal order} (\texttt{f} then
+    \texttt{g}, not the reverse); the sequential-composition axiom,
+    temporal directedness.
+  \end{itemize}
+\item
+  \textbf{𐑜, distant.} Fragment \texttt{f\ ∨\ g\ ∨\ h}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{f\ ∨\ g\ ∨\ h}.
+  \item
+    Named: \textbf{disjunctive coupling} (any condition suffices;
+    parallel alternatives).
+  \end{itemize}
+\item
+  \textbf{𐑝, distant.} Fragment \texttt{f\ ∧\ g\ ∧\ h}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{f\ ∧\ g\ ∧\ h}.
+  \item
+    Named: \textbf{conjunctive coupling} (all conditions required;
+    simultaneous).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{axis-9.-criticality-ux3c6-navigator-ux1d4d5ux2085}{%
+\subsection{Axis 9. Criticality (Φ, navigator ⊙,
+𝓕₅)}\label{axis-9.-criticality-ux3c6-navigator-ux1d4d5ux2085}}
+
+Conventional meaning: analytic character of the fixed point.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{⊙ {[}PHI\_C{]}, apex.} Fragment
+  \texttt{ξ\ →\ ∞\ ∧\ μ∘δ\ =\ id}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{ξ\ →\ ∞\ ∧\ (∀a)(μ(δ(a))\ =\ a)}; correlation length
+    diverges while the split/fuse pair remains an exact identity.
+  \item
+    Named: the \textbf{critical fixed point with exact Frobenius
+    closure}: a scale-invariant point (\texttt{ξ\ →\ ∞}) at which the
+    section/retraction is lossless. The Frobenius section survives the
+    divergence, the self-dual critical point.
+  \end{itemize}
+\item
+  \textbf{𐑮, close.} Fragment \texttt{ξ\ ∈\ ℂ\ ∧\ Im(ξ)\ →\ ∞}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{ξ\ ∈\ ℂ\ ∧\ Im(ξ)\ →\ ∞}.
+  \item
+    Named: a \textbf{complex-axis criticality} (Lee-Yang edge, complex
+    RG fixed point, ζ-zero line); analytic continuation off the real
+    axis.
+  \end{itemize}
+\item
+  \textbf{𐑻, distant.} Fragment
+  \texttt{H(λ)\ non-Herm\ ∧\ det(H\ -\ λI)\ =\ 0\ ∧\ ∂\_λ\ H\ =\ 0}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO:
+    \texttt{nonHermitian(H(λ))\ ∧\ det(H\ -\ λI)\ =\ 0\ ∧\ ∂\_λ\ H\ =\ 0}.
+  \item
+    Named: a \textbf{non-Hermitian exceptional point}: eigenvalue and
+    eigenvector coalescence, a square-root branch point of the spectrum.
+  \end{itemize}
+\item
+  \textbf{𐑣, distant.} Fragment \texttt{ξ\ →\ ∞\ ∧\ chaotic(x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{ξ\ →\ ∞\ ∧\ chaotic(x)}.
+  \item
+    Named: \textbf{divergence into chaos} (unbounded correlation without
+    a fixed point; supercritical runaway).
+  \end{itemize}
+\item
+  \textbf{𐑢, distant.} Fragment \texttt{¬∃ξ(diverges(ξ))}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{¬∃ξ(diverges(ξ))}.
+  \item
+    Named: a \textbf{subcritical / gapped phase} (no divergent length
+    scale; stable).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{axis-10.-chirality-h-navigator-ux127-ux1d4d5ux2084}{%
+\subsection{Axis 10. Chirality (H, navigator Ħ,
+𝓕₄)}\label{axis-10.-chirality-h-navigator-ux127-ux1d4d5ux2084}}
+
+Conventional meaning: handedness of the state under mirror and shift,
+which is to say the direction available to whatever Ç holds. H is
+chirality throughout, never temporal depth or memory.
+
+The ladder is a tower and its descent. 𐑫 is a tower of
+\texttt{μ∘δ}-fixed points at every rank, standing, with nothing falling
+through it. 𐑖 is a rank descent: something is falling. 𐑓 is
+shift-invariance, no handedness at all, so nothing \emph{can} fall. Read
+with Axis 6: Ç is the store, Ħ is the direction it discharges into, and
+neither moves anything alone. See \emph{Reading the table} §4.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{𐑫 {[}ETERNAL\_FIXEDPOINT{]}, apex.} Fragment
+  \texttt{∀n∃φ(rank(φ)\ \textgreater{}\ n\ ∧\ φ\ fixed\ by\ μ∘δ\ ∧\ φ\ ∈\ V)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO:
+    \texttt{(∀n)(∃φ)(rank(φ)\ \textgreater{}\ n\ ∧\ μ(δ(φ))\ =\ φ\ ∧\ φ\ ∈\ V)}.
+  \item
+    Named: an \textbf{inexhaustible tower of Frobenius fixed points} of
+    unbounded rank; a topologically protected chirality with fixed
+    points at every height (a proper class of \texttt{μ∘δ}-fixed
+    objects).
+  \end{itemize}
+\item
+  \textbf{𐑖 {[}TEMPD2{]}, close.} Fragment
+  \texttt{∃y∃z(y\ ∈\ x\ ∧\ z\ ∈\ y\ ∧\ ¬\ z\ ∈\ x\ ∧\ rank(z)\ \textless{}\ rank(y))}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: as written; a membership descent that is not transitive
+    (\texttt{z\ ∈\ y\ ∈\ x} but \texttt{z\ ∉\ x}).
+  \item
+    Named: a \textbf{non-transitive membership chain / depth-2
+    well-founded descent}; handedness that survives two levels of
+    descent. Note what the fragment does:
+    \texttt{rank(z)\ \textless{}\ rank(y)} is a fall through rank. The
+    tower of 𐑫 is standing; here it is spilling.
+  \end{itemize}
+\item
+  \textbf{𐑒, distant.} Fragment \texttt{∃y(P(y)\ ↔\ P(S²(y)))}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{(∃y)(P(y)\ ↔\ P(S²(y)))}.
+  \item
+    Named: a \textbf{period-2 symmetry under the shift} (invariance
+    under \texttt{S²}, soft chirality).
+  \end{itemize}
+\item
+  \textbf{𐑓, distant.} Fragment \texttt{∀x(P(x)\ ↔\ P(S(x)))}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{(∀x)(P(x)\ ↔\ P(S(x)))}.
+  \item
+    Named: \textbf{full shift invariance} (period-1; achiral, no
+    handedness to break).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{axis-11.-stoichiometry-s-navigator-ux3c3-ux1d4d5ux2083}{%
+\subsection{Axis 11. Stoichiometry (S, navigator Σ,
+𝓕₃)}\label{axis-11.-stoichiometry-s-navigator-ux3c3-ux1d4d5ux2083}}
+
+Conventional meaning: matching cardinality of the two coupled sides A
+and B.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{𐑳, apex.} Fragment \texttt{∃a∈A∃b∈B(type(a)\ ≠\ type(b))}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{(∃a\ ∈\ A)(∃b\ ∈\ B)(type(a)\ ≠\ type(b))}.
+  \item
+    Named: a \textbf{heterotypic / unmatched coupling} (n:m, the two
+    sides carry distinct types; cross-type reaction center present).
+  \end{itemize}
+\item
+  \textbf{𐑕, close.} Fragment \texttt{∀a∈A∀b∈B(type(a)\ =\ type(b))}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{(∀a\ ∈\ A)(∀b\ ∈\ B)(type(a)\ =\ type(b))}.
+  \item
+    Named: a \textbf{homotypic matched coupling} (n:n, all pairs share a
+    type).
+  \end{itemize}
+\item
+  \textbf{𐑙, distant.} Fragment
+  \texttt{\textbar{}A\textbar{}\ =\ 1\ ∧\ \textbar{}B\textbar{}\ =\ 1}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO:
+    \texttt{\textbar{}A\textbar{}\ =\ 1\ ∧\ \textbar{}B\textbar{}\ =\ 1}.
+  \item
+    Named: a \textbf{1:1 singleton pairing} (a single bond, the minimal
+    stoichiometric unit).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{axis-12.-topological-protection-ux3c9-navigator-ux3c9-ux1d4d5ux2084}{%
+\subsection{Axis 12. Topological Protection (Ω, navigator Ω,
+𝓕₄)}\label{axis-12.-topological-protection-ux3c9-navigator-ux3c9-ux1d4d5ux2084}}
+
+Conventional meaning: the homotopy invariant guarding the state.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{𐑟 {[}BRAID\_TRANSCENDENCE{]}, apex.} Fragment
+  \texttt{Braid(σ\_i)\ ∧\ R\_matrix\ ≠\ 0\ ∧\ nonAbelian(x)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{braid(σ\_i)\ ∧\ R\ ≠\ 0\ ∧\ nonAbelian(x)}.
+  \item
+    Named: a \textbf{non-Abelian braiding / representation of the braid
+    group} with a nontrivial R-matrix (anyonic protection); a
+    transcendence atom.
+  \end{itemize}
+\item
+  \textbf{𐑭 {[}ZWIND{]}, close.} Fragment
+  \texttt{∮\_γ\ A\ =\ 2πn\ ∧\ n\ ∈\ ℤ\ ∧\ wind(γ)\ ≠\ 0}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{∮\_γ\ A\ =\ 2πn\ ∧\ n\ ∈\ ℤ\ ∧\ winding(γ)\ ≠\ 0}.
+  \item
+    Named: an \textbf{integer winding number / first Chern class}; ℤ
+    topological protection (quantized holonomy).
+  \end{itemize}
+\item
+  \textbf{𐑴, distant.} Fragment \texttt{∮\_γ\ A\ =\ nπ\ ∧\ n\ ∈\ ℤ₂}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{∮\_γ\ A\ =\ nπ\ ∧\ n\ ∈\ ℤ₂}.
+  \item
+    Named: a \textbf{ℤ₂ Berry phase} (half-integer holonomy, ℤ₂
+    protection).
+  \end{itemize}
+\item
+  \textbf{𐑷, distant.} Fragment \texttt{∮\_γ\ dx\ =\ 0}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    FO: \texttt{∮\_γ\ dx\ =\ 0}.
+  \item
+    Named: an \textbf{exact / trivial holonomy} (no protection;
+    contractible loop).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{reading-the-table}{%
+\subsection{Reading the table}\label{reading-the-table}}
+
+Four structural facts carry into the paper.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{The apex value of each axis is where a named transcendence or
+  Frobenius condition appears.} \texttt{μ∘δ\ =\ id} recurs at the apex
+  of Parity (P 𐑹), Criticality (Φ ⊙) and Chirality (H 𐑫), and L8's two
+  declared transcendence atoms (BROADCAST at Γ 𐑵, BRAID at Ω 𐑟) sit at
+  axis apices. The apex column is not decorative: it is exactly the set
+  of values that exceed the ZFC\_fe baseline \textbf{on the road to L8}.
+  That qualifier is load bearing, see 3.
+\item
+  \textbf{The twelve axes are independent conventional invariants.}
+  Dimension, connectivity, adjunction direction, symmetry group, channel
+  fidelity, relaxation regime, cardinal granularity, logical connective,
+  criticality type, chirality, stoichiometric matching, and homotopy
+  class are twelve quantities a mathematician already computes
+  separately. The crystal asserts they form a complete coordinate system
+  for structural type. Phase 2 argues the order in which they must be
+  fixed is the magnum-opus stage sequence.
+\item
+  \textbf{Transcendence is not a single summit, and L9 proves it.} CLINK
+  L8 called itself the terminal layer of the chain. It is not: CLINK L9,
+  the Gaussian Moat Resolution layer, sits above it at O\_∞⁺, reached by
+  eight promotions the navigator notes as HODGE BRIDGE TRANSCENDENCE.
+  The striking part is the direction. L9 exceeds L8 by
+  \textbf{relinquishing both of L8's transcendence atoms}: Γ gives up
+  BROADCAST 𐑵 for 𐑝 (\texttt{f\ ∧\ g\ ∧\ h}, a three-unit stitch) at the
+  maximum gap of 1.0, and Ω gives up BRAID 𐑟 for 𐑭 (integer winding). Ð
+  drops from the imscriptive fixed point 𐑦 to 𐑛, which this table calls
+  \texttt{distant} and reads as a 0-dimensional finite set, and which L9
+  names PRIME\_POINT: a point-like prime atom, exactly what a Gaussian
+  prime is. Four axes hold fixed across the rung, and they are the ones
+  that matter: ƒ 𐑐, ⊙ ⊙, H 𐑫, S 𐑳. The self-modeling criticality and the
+  eternal Frobenius fixed point are precisely what L9 does not give up.
+\item
+  \textbf{Ç holds, Ħ points, and the pair is what moves.} The two axes
+  are read together or not at all. Ç is a store: how much the object
+  still has, and whether its gate is open. Ħ is a direction: whether
+  there is anywhere for the store to go. Neither moves anything alone. A
+  full store with no handedness (Ç 𐑪, Ħ 𐑓) is frozen: τ = ∞ and
+  shift-invariant, so nothing can fall. A direction with an empty store
+  (Ç 𐑘, Ħ 𐑫) is a standing tower with nothing descending it.
+
+  The fragments carry this without needing to be told. Ħ's apex 𐑫 is a
+  tower of \texttt{μ∘δ}-fixed points at every rank; its next value 𐑖 is
+  \texttt{rank(z)\ \textless{}\ rank(y)}, a fall through rank. So 𐑫 is
+  the tower standing and 𐑖 is the tower spilling, and the step from 𐑫
+  down to 𐑖 is not a loss but a discharge. This is also the cleanest
+  evidence for the potential reading of Ç: on a rate reading, an axis's
+  apex should be its longest τ, and Ç's apex is 𐑧 at ordinal 3 while
+  both τ = ∞ values rank further out. Only \texttt{gate\_open(x)}
+  explains that, and only a store has a gate.
+
+  Both facts are formal, not glossed.
+  \texttt{Smaragdine\_Synthetica/lean} and the p4rakernel tree carry the
+  pair as theorems: the bare tick is Frobenius-minimal in eleven
+  coordinates and maximal in chirality alone (an empty store, an endless
+  tower), while lived duration sits at Ç's open gate with chirality one
+  step down (a full store, descending). The gap between the two is the ⊙
+  seam, which is exactly where a store is permitted to become a flow.
+
+  So the apex column is a coordinate in L8's dialect, not a ladder to a
+  summit. Read a value as low because it is \texttt{distant} here and
+  you will call L9 a demotion; measured in its own register it is a tier
+  above. The Frobenius conditions carry across dialects. The
+  transcendence atoms do not.
+\end{enumerate}
+
+\end{document}
