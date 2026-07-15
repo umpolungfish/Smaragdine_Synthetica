@@ -1,23 +1,37 @@
-Retire the Phi_c family: gen-1 criticality names to bare Shavian
+Ç is potential, not a rate, and its own ladder says so
 
-Phi_c is ⊙. The `_c` forms only ever existed under Criticality, so unlike bare
-Phi they carry no ambiguity: today's Φ is Parity and has no `_c` value, so
-nothing here needs a judgement call. Rewrote the family to the values
-`models.from_symbol` returns for them: Phi_c / Φ_c / ⊙_c / Phi_ctyogh → ⊙,
-Phi_c_complex → 𐑮, Phi_sub → 𐑢, Phi_EP → 𐑻, Phi_sup → 𐑣. 7,689 refs, 585 files.
+I had Axis 6 glossed as "relaxation timescale versus observation time", which is
+the rate reading, and the rate reading cannot explain the axis's own shape. If Ç
+measured speed then more τ would be more of whatever Ç measures and the apex
+would sit at the maximum. It does not. The apex is 𐑧 at ordinal 3, and both of
+the τ = ∞ values rank further out: 𐑪 at 4 and 𐑺 at 4.5. The peak is not the
+longest τ. It is the longest τ whose gate is open, which is why gate_open(x)
+appears in the apex fragment and nowhere else on the axis.
 
-The whole job is one distinction: Phi_c names a VALUE in prose and data, and it
-also names a CONSTRUCTOR in code. `Criticality.Phi_c` is a live Lean identifier
-(`theorem as_is_QCP : asymptotic_safety.crit = Criticality.Phi_c := rfl`) and
-`Criticality.Phi_ctyogh` is a live Python enum alias. Rewriting those gives
-`Criticality.⊙`, which is not an identifier in either language. So dotted
-occurrences stay and everything else moves. Same string, two roles — the same
-shape as CLINK L8 versus the `=` opcode, where only reading tells them apart.
+Read as potential the ladder is exact. τ ≪ T is potential already spent, so the
+object sits at the bottom of its well before you look at it. τ ≫ T with the gate
+open is the most potential that can still go: full store, open gate, and
+conventionally a reversible path, which is why work is extractable there. τ = ∞
+is held forever and inaccessible, ordered or MBL, maximum τ and unusable. A store
+that cannot discharge is not a larger store, and that is the whole reason the
+axis turns over at 3.
 
-models.py keeps its old spellings on purpose. Its from_symbol maps are the
-back-compat table: the keys have to go on spelling `Φ_c` or the translation from
-old symbols stops working. Rewriting the dictionary that performs the migration
-would remove the migration.
+Ħ is the direction that store goes, and its fragments were already saying so. 𐑫
+is a tower of μ∘δ-fixed points at every rank, standing, nothing falling through
+it. 𐑖 is rank(z) < rank(y), a fall through rank. So 𐑫 is the tower standing and
+𐑖 is the tower spilling, and the step down from 𐑫 to 𐑖 is a discharge, not a
+loss. Neither axis moves anything alone: a full store with no handedness is
+frozen, and a direction with an empty store is a standing tower with nothing
+descending it.
 
-Verified after: imscrbgrmr imports, from_symbol('Φ_c') still returns ⊙, both
-navigators still answer (cl8nk promote, cl9nk moat), and no syntax regressions.
+Added that as a fourth reading and pointed both axis sections at it. The two are
+read together or not at all.
+
+Both facts are formal rather than glossed, and the Lean already carries them: the
+bare tick is Frobenius-minimal in eleven coordinates and maximal in chirality
+alone, an empty store with an endless tower, while lived duration sits at Ç's
+open gate with chirality one step down, a full store descending. The gap between
+them is the ⊙ seam, which is precisely where a store is permitted to become a
+flow. That is also why H must stay chirality and never temporal depth: the
+temporal content lives in the handedness, and calling H memory makes the pair
+unstatable.

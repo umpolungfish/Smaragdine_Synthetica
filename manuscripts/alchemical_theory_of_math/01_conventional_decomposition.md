@@ -38,11 +38,11 @@ cardinality: each pair shares the same value count (𝓕₃ = 3, 𝓕₄ = 4, �
 | 3 | Ř | R  Relational Mode       | 𝓕₄ | direction and duality of the binding relation |
 | 4 | Φ | P  Parity / Symmetry     | 𝓕₅ | symmetry group fixing the object |
 | 5 | ƒ | F  Fidelity              | 𝓕₃ | information loss of the read/write map |
-| 6 | Ç | K  Kinetic Character     | 𝓕₅ | relaxation timescale versus observation |
+| 6 | Ç | K  Kinetic Character     | 𝓕₅ | potential held, and whether its gate is open |
 | 7 | Γ | G  Scope / Granularity   | 𝓕₃ | subset-size regime of correlations |
 | 8 | ɢ | Γ  Interaction Grammar   | 𝓕₄ | logical connective of the coupling |
 | 9 | ⊙ | Φ  Criticality           | 𝓕₅ | analytic character of the fixed point |
-| 10 | Ħ | H  Chirality             | 𝓕₄ | handedness of the state under mirror and shift |
+| 10 | Ħ | H  Chirality             | 𝓕₄ | handedness: the direction a held potential can go |
 | 11 | Σ | S  Stoichiometry         | 𝓕₃ | matching cardinality of the two sides |
 | 12 | Ω | Ω  Topological Protection | 𝓕₄ | homotopy invariant guarding the state |
 
@@ -178,24 +178,48 @@ Conventional meaning: information loss of the read/write map.
 
 ## Axis 6. Kinetic Character (K, navigator Ç, 𝓕₅)
 
-Conventional meaning: relaxation timescale τ versus observation time T.
+Conventional meaning: **potential**, how much the object still holds, and
+whether the gate is open for it to go. τ is how long a disturbance is retained
+against the observation window, so it reads as a store, not a speed: τ ≪ T is
+potential already spent, τ ≫ T is potential still held.
+
+The ladder settles the reading on its own. If Ç were a rate, more τ would be
+more of whatever Ç measures and the apex would sit at the maximum. It does not.
+The apex is 𐑧 at ordinal 3, while 𐑪 (ordinal 4) and 𐑺 (4.5) are both further
+out, and both are the ones carrying τ = ∞. The peak is not the longest τ; it is
+the longest τ **whose gate is open**, which is why `gate_open(x)` appears in the
+apex fragment and in none of the others. Past the apex the potential is still
+held and can no longer move. A store that cannot discharge is not a larger
+store.
+
+Potential alone does not move anything: Ç says how much is held, Ħ (Axis 10)
+says whether there is a direction to hold it toward. See *Reading the table* §4.
 
 - **𐑧, apex.** Fragment `τ ≫ T ∧ eq(x) ∧ gate_open(x)`.
   - FO: `τ ≫ T ∧ equilibrium(x) ∧ open(x)`.
-  - Named: a **quasi-static / adiabatic regime**: relaxation slow against the
-    probe, gate open, effectively at equilibrium on the observation window.
+  - Named: a **quasi-static / adiabatic regime**: retained against the probe and
+    still able to discharge. Maximal *available* potential: the store is full
+    and the gate is open. Conventionally, a reversible path: work is extractable
+    precisely because relaxation is slow and nothing is pinned.
 - **𐑤, close.** Fragment `τ ∼ T ∧ noisy(x)`.
   - FO: `τ ≈ T ∧ noisy(x)`.
-  - Named: a **critically damped / noisy regime** (timescales comparable).
+  - Named: a **critically damped / noisy regime** (store and probe on the same
+    timescale; potential is leaking as fast as it is read).
 - **𐑘, distant.** Fragment `τ ≪ T ∧ ∂_t x = f(x)`.
   - FO: `τ ≪ T ∧ ẋ = f(x)`.
-  - Named: a **fast deterministic flow** (autonomous ODE, quick relaxation).
+  - Named: a **fast deterministic flow** (autonomous ODE). Nothing is retained:
+    the potential discharges inside the observation window, so the object is
+    always already at the bottom of its well.
 - **𐑪, distant.** Fragment `τ = ∞ ∧ ord(x)`.
   - FO: `τ = ∞ ∧ ordered(x)`.
-  - Named: **frozen by order** (kinetically trapped, non-ergodic ordered state).
+  - Named: **frozen by order** (kinetically trapped, non-ergodic). The store is
+    infinite and inaccessible: held forever, ordered, with no open gate. Maximum
+    τ, unusable.
 - **𐑺, distant.** Fragment `τ = ∞ ∧ dis(x) ∧ MBL`.
   - FO: `τ = ∞ ∧ disordered(x) ∧ MBL(x)`.
   - Named: **many-body localization** (frozen by disorder, ergodicity broken).
+    The same trap reached through disorder rather than order, which is why it
+    ranks past 𐑪 rather than beside it.
 
 ---
 
@@ -272,8 +296,15 @@ Conventional meaning: analytic character of the fixed point.
 
 ## Axis 10. Chirality (H, navigator Ħ, 𝓕₄)
 
-Conventional meaning: handedness of the state under mirror and shift. H is
-chirality throughout, never temporal depth or memory.
+Conventional meaning: handedness of the state under mirror and shift, which is
+to say the direction available to whatever Ç holds. H is chirality throughout,
+never temporal depth or memory.
+
+The ladder is a tower and its descent. 𐑫 is a tower of `μ∘δ`-fixed points at
+every rank, standing, with nothing falling through it. 𐑖 is a rank descent:
+something is falling. 𐑓 is shift-invariance, no handedness at all, so nothing
+*can* fall. Read with Axis 6: Ç is the store, Ħ is the direction it discharges
+into, and neither moves anything alone. See *Reading the table* §4.
 
 - **𐑫 [ETERNAL_FIXEDPOINT], apex.** Fragment
   `∀n∃φ(rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V)`.
@@ -286,7 +317,9 @@ chirality throughout, never temporal depth or memory.
   - FO: as written; a membership descent that is not transitive (`z ∈ y ∈ x` but
     `z ∉ x`).
   - Named: a **non-transitive membership chain / depth-2 well-founded descent**;
-    handedness that survives two levels of descent.
+    handedness that survives two levels of descent. Note what the fragment does:
+    `rank(z) < rank(y)` is a fall through rank. The tower of 𐑫 is standing; here
+    it is spilling.
 - **𐑒, distant.** Fragment `∃y(P(y) ↔ P(S²(y)))`.
   - FO: `(∃y)(P(y) ↔ P(S²(y)))`.
   - Named: a **period-2 symmetry under the shift** (invariance under `S²`, soft
@@ -339,7 +372,7 @@ Conventional meaning: the homotopy invariant guarding the state.
 
 ## Reading the table
 
-Two structural facts carry into the paper.
+Four structural facts carry into the paper.
 
 1. **The apex value of each axis is where a named transcendence or Frobenius
    condition appears.** `μ∘δ = id` recurs at the apex of Parity (P 𐑹),
@@ -369,6 +402,30 @@ Two structural facts carry into the paper.
    and they are the ones that matter: ƒ 𐑐, ⊙ ⊙, H 𐑫, S 𐑳. The self-modeling
    criticality and the eternal Frobenius fixed point are precisely what L9 does not
    give up.
+
+4. **Ç holds, Ħ points, and the pair is what moves.** The two axes are read
+   together or not at all. Ç is a store: how much the object still has, and
+   whether its gate is open. Ħ is a direction: whether there is anywhere for the
+   store to go. Neither moves anything alone. A full store with no handedness
+   (Ç 𐑪, Ħ 𐑓) is frozen: τ = ∞ and shift-invariant, so nothing can fall. A
+   direction with an empty store (Ç 𐑘, Ħ 𐑫) is a standing tower with nothing
+   descending it.
+
+   The fragments carry this without needing to be told. Ħ's apex 𐑫 is a tower of
+   `μ∘δ`-fixed points at every rank; its next value 𐑖 is `rank(z) < rank(y)`, a fall
+   through rank. So 𐑫 is the tower standing and 𐑖 is the tower spilling, and
+   the step from 𐑫 down to 𐑖 is not a loss but a discharge. This is also the
+   cleanest evidence for the potential reading of Ç: on a rate reading, an axis's
+   apex should be its longest τ, and Ç's apex is 𐑧 at ordinal 3 while both τ = ∞
+   values rank further out. Only `gate_open(x)` explains that, and only a store
+   has a gate.
+
+   Both facts are formal, not glossed. `Smaragdine_Synthetica/lean` and the
+   p4rakernel tree carry the pair as theorems: the bare tick is Frobenius-minimal
+   in eleven coordinates and maximal in chirality alone (an empty store, an
+   endless tower), while lived duration sits at Ç's open gate with chirality one
+   step down (a full store, descending). The gap between the two is the ⊙ seam,
+   which is exactly where a store is permitted to become a flow.
 
    So the apex column is a coordinate in L8's dialect, not a ladder to a summit.
    Read a value as low because it is `distant` here and you will call L9 a
