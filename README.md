@@ -12,13 +12,13 @@ cd Smaragdine_Synthetica
 pip install -e .
 
 # List all versicles
-ss list
+smaragdine list
 
 # Look up a specific versicle
-ss lookup 4
+smaragdine lookup 4
 
 # Analyze an alchemical operation
-ss analyse 7
+smaragdine analyse 7
 ```
 
 ## Structural Type

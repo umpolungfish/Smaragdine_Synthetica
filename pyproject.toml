@@ -10,7 +10,7 @@ dependencies = []
 emerald-tablet-engine = { path = "../lang/emerald-tablet-engine", editable = true }
 
 [project.scripts]
-ss = "smaragdine_synthetica.cli:main"
+smaragdine = "smaragdine_synthetica.cli:main"
 
 [build-system]
 requires = ["hatchling"]

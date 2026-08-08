@@ -1,20 +1,20 @@
+"""Corpus front-end package. The compilation engine is the installed
+`emerald_tablet_engine` distribution; the session protocol is re-exported when that engine
+ships one."""
+
 from .navigator import lookup, list_versicles, analyse_operation
 from . import navigator
 
-import sys
-from pathlib import Path
-_ENGINE = Path(__file__).parent.parent.parent / 'lang' / 'emerald-tablet-engine'
-if str(_ENGINE) not in sys.path:
-    sys.path.insert(0, str(_ENGINE))
-
-from emerald_tablet_engine.session import EmeraldSession, SessionState
+# The engine ships as an installed package; its seven-gate session is optional
+# and only some corpora implement it. Re-export it when present.
+try:
+    from emerald_tablet_engine.session import EmeraldSession, SessionState  # noqa: F401
+    _HAS_SESSION = True
+except ImportError:
+    _HAS_SESSION = False
 
 __version__ = '1.0.0'
-__all__ = [
-    'EmeraldSession',
-    'SessionState',
-    'lookup',
-    'list_versicles',
-    'analyse_operation',
-    'navigator',
-]
+
+__all__ = ['lookup', 'list_versicles', 'analyse_operation', 'navigator']
+if _HAS_SESSION:
+    __all__ += ['EmeraldSession', 'SessionState']
