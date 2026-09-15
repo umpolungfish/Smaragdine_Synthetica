@@ -31,15 +31,15 @@ smaragdine analyse 7
 
 ## Contents
 
-- `smaragdine_synthetica/` — Python package (navigator, CLI)
-- `SMARAGDINE.md` — Definitive structural document
-- `ENGINE.md` — Engine specification
-- `COMPLETE_LISTING.md` — Full data enumeration
-- `lean/` — Lean 4 companion files
-- `programs/` — Engine source code
-- `data/` — Structured corpus data
-- `manuscripts/` — Source manuscripts and transcriptions
-- `images/` — Diagrams and visualizations
+- `smaragdine_synthetica/` - Python package (navigator, CLI)
+- `SMARAGDINE.md` - Definitive structural document
+- `ENGINE.md` - Engine specification
+- `COMPLETE_LISTING.md` - Full data enumeration
+- `lean/` - Lean 4 companion files
+- `programs/` - Engine source code
+- `data/` - Structured corpus data
+- `manuscripts/` - Source manuscripts and transcriptions
+- `images/` - Diagrams and visualizations
 
 ## Operations
 
@@ -48,7 +48,7 @@ Each versicle maps to a chemical operation:
 | Versicle | Operation | Description |
 |----------|-----------|-------------|
 | V01 | Identity seal | Truth-establishing initial condition |
-| V02 | Correspondence bridge | As above, so below — scale invariance |
+| V02 | Correspondence bridge | As above, so below - scale invariance |
 | V03 | Dissolution | Separate earth from fire |
 | V04 | Sublimation | Ascend from earth to heaven |
 | V05 | Exaltation | Receive glory/wisdom |
